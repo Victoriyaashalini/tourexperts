@@ -1,0 +1,54 @@
+<app-homecarousel></app-homecarousel>
+
+<div class="container-fluid">
+	<h2 class="text-center mt-5 mb-5">WELCOME TO TOUR EXPERTS</h2>
+</div>
+<app-packages></app-packages>
+
+<div class="container">
+<h3>Welcome to Tour EXPERTS</h3>
+<p>we believe in the magic of travel. Founded with the vision to make every journey a remarkable experience, we have been providing meticulously curated travel packages for years. Our commitment to excellence ensures that you enjoy a seamless and unforgettable journey, filled with comfort and satisfaction.</p>
+<p>Choose Tour Experts for a travel experience that is as unique as you are. Let us turn your travel dreams into unforgettable realities, crafted just for you.</p>
+</div>
+
+
+
+<section class="traveler-connect py-5">
+	<div class="container threecards">
+	  <div class="row threecardsrow">
+		<div class="col-md-4 mb-4 ">
+		  <div class="card h-100 text-center shadow-sm">
+			<div class="card-body">
+			  <div class="counter" id="customerCounter" style="font-size: 2rem;">
+				{{ displayCustomerCount | number:'1.0-0' }}K
+				<h3> Customers</h3>
+
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<div class="col-md-4 mb-4 ">
+		  <div class="card h-100 text-center shadow-sm">
+			<div class="card-body">
+			  <div class="counter" id="travelDestinationsCounter" style="font-size: 2rem;">
+				{{ displayDestinationCount }}+
+				<h3>Travel Destinations</h3>
+
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<div class="col-md-4 mb-4 ">
+		  <div class="card h-100 text-center shadow-sm">
+			<div class="card-body">
+			  <div class="counter" id="partnersCounter" >
+				{{ displayPartnerCount | number:'1.0-0' }}+
+				<h3> Partners</h3>
+
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  </section>

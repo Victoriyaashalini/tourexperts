@@ -1,0 +1,59 @@
+<nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand ms-3 navbrimage" href="#">
+            <img src="../../../assets/images/logo.jpg" alt="" style="width: 150px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+            <img src="../../../assets/images/menu.png" alt="Menu">
+        </button>
+        <div class="offcanvas offcanvas-start custom-offcanvas" data-bs-scroll="true" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas Navbar</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav mx-auto gap-3">
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="navigateAndCloseOffcanvas('')">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="navigateAndCloseOffcanvas('/about')">Company</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="navigateAndCloseOffcanvas('/destination')">Destination</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Packages
+                        </a>
+                        <ul class="dropdown-menu mega-menu">
+                            <div class="row">
+                                <div class="col-6">
+                                    <a class="dropdown-item" (click)="navigateAndCloseOffcanvas('/asia')">Asia</a>
+                                    <a class="dropdown-item" (click)="navigateAndCloseOffcanvas('/indiapackage')">India</a>
+                                    <a class="dropdown-item" (click)="navigateAndCloseOffcanvas('/internationalpakage')">International</a>
+                                    <a class="dropdown-item" (click)="navigateAndCloseOffcanvas('/honeymoonPackage')">Honeymoon</a>
+                                </div>
+                                <div class="col-6">
+                                    <a class="dropdown-item" (click)="navigateAndCloseOffcanvas('/islandpackage')">Island</a>
+                                    <a class="dropdown-item" (click)="navigateAndCloseOffcanvas('/weddingpackage')">Wedding</a>
+                                    <a class="dropdown-item" (click)="navigateAndCloseOffcanvas('/familytourPackage')">Family Tour</a>
+                                    <a class="dropdown-item" (click)="navigateAndCloseOffcanvas('/grouptour')">Group Tour</a>
+                                </div>
+                            </div>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="navigateAndCloseOffcanvas('/populartour')">Popular Tours</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="navigateAndCloseOffcanvas('/contact')">Contact us</a>
+                    </li>
+                </ul>
+                <div class="d-flex justify-content-between contact-btn d-grid gap-2"> 
+                    <button class="btn btn-primary contact-button" type="button">9677518806</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

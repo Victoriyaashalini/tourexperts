@@ -1,0 +1,58 @@
+
+<div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+	<div class="carousel-inner">
+	  <div class="carousel-item active" [@slideIn]="carouselIndex">
+		<div class="container">
+			<div class="row">
+			  <div class="col-md-4">
+				<div class="card">
+				  <img src="assets/zanzibar.jpg" class="card-img-top" alt="Zanzibar">
+				  <div class="card-body">
+					<h5 class="card-title">ZANZIBAR</h5>
+				  </div>
+				</div>
+			  </div>
+			  <div class="col-md-4">
+				<div class="card">
+				  <img src="assets/morocco.jpg" class="card-img-top" alt="Morocco">
+				  <div class="card-body">
+					<h5 class="card-title">MOROCCO</h5>
+				  </div>
+				</div>
+			  </div>
+			  <div class="col-md-4">
+				<div class="card">
+				  <img src="assets/madagascar.jpg" class="card-img-top" alt="Madagascar">
+				  <div class="card-body">
+					<h5 class="card-title">MADAGASCAR</h5>
+				  </div>
+				</div>
+			  </div>
+			</div>
+		  </div>		<div class="carousel-caption d-none d-md-block">
+		
+		</div>
+	  </div>
+	  <div class="carousel-item" [@slideIn]="carouselIndex">
+		<img src="https://via.placeholder.com/800x400" class="d-block w-100" alt="...">
+		<div class="carousel-caption d-none d-md-block">
+		  
+		</div>
+	  </div>
+	  <div class="carousel-item" [@slideIn]="carouselIndex">
+		<img src="https://via.placeholder.com/800x400" class="d-block w-100" alt="...">
+		<div class="carousel-caption d-none d-md-block">
+		 
+		</div>
+	  </div>
+	</div>
+	<button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+	  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+	  <span class="visually-hidden">Previous</span>
+	</button>
+	<button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+	  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+	  <span class="visually-hidden">Next</span>
+	</button>
+  </div>
+  

@@ -1,0 +1,12 @@
+[build]
+
+  publish = "dist/tourexpertsmean"
+ command = "ng build --configuration=production"
+
+[[plugins]]
+  package = "@netlify/angular-runtime"
+
+  [[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200 

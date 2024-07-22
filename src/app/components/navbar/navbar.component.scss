@@ -1,0 +1,137 @@
+.contact-button {
+    width: 150px;
+    color: white;
+    background-color: #00796b;
+}
+.poppins-medium {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+.navbar-nav .nav-link, 
+.navbar-nav .dropdown-item, 
+.contact-button {
+    cursor: pointer;
+}
+.nav-link {
+    font-size: clamp(16px, 2vw, 18px);
+    color: #08154b;
+    font-family: "Poppins", sans-serif;
+}
+
+.navbrimage {
+    mix-blend-mode: multiply;
+}
+
+.nav-link:hover {
+    color: #1A9DF1;
+}
+
+.navbar {
+    background-color: #ffffff;
+}
+
+/* Offcanvas widths */
+.custom-offcanvas {
+    width: 300px; /* Default width */
+}
+
+@media (max-width: 991.98px) {
+    .custom-offcanvas {
+        width: 300px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .custom-offcanvas {
+        width: 80%;
+    }
+}
+
+/* Navbar gap and dropdown menu styles */
+.navbar-nav {
+    gap: 15px; /* Adjust the gap between nav links */
+}
+
+.dropdown-menu {
+    padding: 10px 0; /* Adjust the dropdown menu padding if needed */
+    width: 100%; /* Full width */
+    max-width: 600px; /* Set a maximum width */
+    box-sizing: border-box; /* Ensure padding and borders are included in the width */
+    display: none; /* Ensure dropdown is hidden by default */
+}
+
+.dropdown-item {
+    padding: 10px 20px; /* Adjust the padding for dropdown items */
+    display: block; /* Ensure block display */
+    width: 100%; /* Full width */
+}
+
+/* Adjust dropdown width for larger screens */
+@media (min-width: 992px) {
+    .dropdown-menu {
+        width: 400px; /* Adjust for larger screens if needed */
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .dropdown-menu {
+        width: 80%; /* Adjust for medium screens */
+    }
+}
+
+@media (max-width: 767px) {
+    .dropdown-menu {
+        width: 100%; /* Full width for small screens */
+    }
+}
+
+/* Custom dropdown icon styles */
+.nav-item.dropdown .dropdown-toggle::after {
+    display: none; /* Remove default dropdown icon */
+}
+
+.nav-item.dropdown .dropdown-menu.show {
+    display: block; /* Show dropdown menu when it's active */
+}
+/* Custom dropdown toggle icon styles */
+.nav-item.dropdown .dropdown-toggle::after {
+    display: none; /* Remove default dropdown icon */
+}
+
+/* Dropdown menu styles */
+.dropdown-menu {
+    display: none; /* Hidden by default */
+    opacity: 0;
+    transition: opacity 0.3s ease; /* Smooth transition for dropdown */
+}
+
+.dropdown-menu.show {
+    display: block; /* Display when active */
+    opacity: 1;
+}
+.nav-item.dropdown .dropdown-toggle::after {
+    display: none; /* Remove default dropdown icon */
+}
+
+/* Dropdown menu styles */
+.dropdown-menu {
+    display: none; /* Hidden by default */
+    opacity: 0;
+    transition: opacity 0.3s ease; /* Smooth transition for dropdown */
+}
+
+.dropdown-menu.show {
+    display: block; /* Display when active */
+    opacity: 1;
+}
+
+/* Ensure icon sizes are consistent */
+.nav-link i {
+    font-size: 16px; /* Adjust as needed */
+    transition: transform 0.3s ease; /* Smooth rotation */
+}
+
+.nav-link i.fa-chevron-up {
+    transform: rotate(180deg); /* Rotate icon when dropdown is open */
+}
