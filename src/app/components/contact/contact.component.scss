@@ -25,20 +25,59 @@
     font-variation-settings:
       "wdth" 100;
   }
+  .pt-serif-regular {
+    font-family: "PT Serif", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .merriweather-light {
+    font-family: "Merriweather", serif;
+    font-weight: 300;
+    font-style: normal;
+  }
   
-.contact-header {
-	background: #F6CE2C;
-    color: #000000;
-    font-weight: bold;
+  .bg-image {
+    background-image: url('../../../assets/images/barry-talley-PkN2ExU2MX0-unsplash\ \(1\).jpg'); /* Ensure the path is correct */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 50vh; /* Adjust the initial height as needed */
+    filter: brightness(90%); /* Example filter */
+  }
+  
+  .content {
+    max-width: 80%;
+  }
+  
+  @media (max-width: 1200px) {
+    .bg-image {
+      height: 40vh; /* Adjust height for large screens */
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .bg-image {
+      height: 35vh; /* Adjust height for medium screens */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .bg-image {
+      height: 30vh; /* Adjust height for small screens */
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .bg-image {
+      height: 25vh; /* Adjust height for extra small screens */
+    }
+  }
+  .contactus{
+    color: rgb(255, 255, 255);
+  }
+  
 
-}
 
-.contact-header h1 {
-    margin-bottom: 0;
-    padding-bottom: 20px;
-        font-family: 'Merriweather', serif;
-
-}
 .contact-bread {
     margin-top: 10px;
 }
@@ -55,7 +94,7 @@
 
 .traveler-connect h2 {
     color: #121415;
-    font-family: "EB Garamond", serif;
+    font-family: "PT Serif", serif;
 
 }
 
@@ -70,7 +109,7 @@
 .card-title {
     margin-bottom: 1rem;
     color: #343a40;
-    font-family: "Lato", sans-serif;
+    font-family: "Merriweather", serif;
 
 }
 
@@ -80,7 +119,7 @@
 }
 .card-text{
     font-family: "Open Sans", sans-serif;
-
+font-size: 15px;
 }
 
 .breadcrumb {
