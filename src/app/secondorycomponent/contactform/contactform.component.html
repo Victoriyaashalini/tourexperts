@@ -1,0 +1,60 @@
+<section>
+    <div class="background-image">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 left-section">
+                    <div class="content">
+                        <h1>THE TRIP OF YOUR DREAM</h1>
+                        <p>Our travel agency is ready to offer you an exciting vacation that is designed to fit your own needs and wishes. Whether it's an exotic cruise or a trip to your favorite resort, you will surely have the best experience.</p>
+                        <div class="contact-info">
+                            <h2>Contact Us</h2>
+                            <p><strong>Phone:</strong> +1 (234) 567-890</p>
+                            <p><strong>Email:</strong> info&#64;travelagency.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 right-section">
+                    <div class="card search-form">
+                        <div class="card-body">
+                            <form class="p-3 custom-form needs-validation" action="/api/contact">
+                                <h3 class="text-center formhead">Let's Plan Your Trip</h3>
+                                <div class="mb-3">
+                                    <input type="text" class="form-control" placeholder="Name" name="cusname" required>
+                                    <div class="valid-feedback">Looks good!</div>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="email" class="form-control" placeholder="Email" name="cusemail">
+                                </div>
+                                <div class="mb-3">
+                                    <input type="tel" class="form-control" placeholder="Phone Number" name="cusphone">
+                                </div>
+                                <div class="mb-3">
+                                    <input type="text" class="form-control" placeholder="City" name="cuscity">
+                                </div>
+                                <div class="mb-3">
+                                    <input type="text" class="form-control" placeholder="Travel Destination" name="cusdestination">
+                                </div>
+                                <div class="mb-3">
+                                    <select class="form-control" name="traveltype">
+                                        <option value="" disabled selected>Travel Type</option>
+                                        <option value="business">Business</option>
+                                        <option value="leisure">Honeymoon</option>
+                                        <option value="adventure">Family tour</option>
+                                        <option value="other">Group tour</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="date" class="form-control" placeholder="Travel Date" name="traveldate">
+                                </div>
+                                <div class="mb-3">
+                                    <input type="number" class="form-control" placeholder="Number of People" name="people">
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100 submitbutton">SUBMIT</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

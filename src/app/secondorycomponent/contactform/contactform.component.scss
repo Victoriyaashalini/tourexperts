@@ -1,0 +1,176 @@
+/* Ensure no horizontal scroll */
+body, html {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.background-image {
+    background: url('../../../assets/images/luca-bravo-O453M2Liufs-unsplash.jpg') no-repeat center center;
+    background-size: cover;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden; /* Add this */
+}
+
+.background-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(8, 8, 8, 0.5); /* Semi-transparent overlay */
+    z-index: 1;
+}
+
+.container-fluid {
+    padding: 0;
+    max-width: 100vw; /* Ensure the container does not exceed the viewport width */
+    overflow: hidden; /* Add this */
+}
+
+.left-section, .right-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    color: rgb(253, 255, 255);
+    z-index: 2; /* Ensure it is above the overlay */
+    overflow: hidden; /* Add this */
+}
+
+.left-section .content {
+    max-width: 90%;
+    padding: 60px;
+}
+
+.left-section p {
+    font-size: 1.2rem; /* Adjust as needed */
+    margin-bottom: 2rem;
+}
+
+.left-section .contact-info {
+    margin-top: 2rem; /* Add some spacing above the contact info */
+}
+
+.left-section .contact-info h2 {
+    font-size: 1.5rem; /* Adjust as needed */
+    margin-bottom: 1rem;
+}
+
+.left-section .contact-info p {
+    font-size: 1rem; /* Adjust as needed */
+    margin-bottom: 0.5rem;
+}
+
+.overlay-links {
+    margin-top: 10px;
+}
+
+.overlay-links h2 {
+    margin-bottom: 10px;
+    font-size: 1.5rem; /* Adjust as needed */
+}
+
+.overlay-links .callicon {
+    display: block;
+    margin: 5px 0;
+    color: white;
+    text-decoration: none;
+    font-size: 1rem; /* Adjust as needed */
+}
+
+.overlay-links .callicon img {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.right-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    z-index: 2; /* Ensure it is above the overlay */
+}
+
+.search-form {
+    background: rgb(232, 232, 232);
+    width: 80%; /* Adjust width */
+    max-width: 500px; /* Max width for large screens */
+    border-radius: 10px;
+    height: auto; /* Adjust height to fit the content */
+    margin: auto; /* Center horizontally */
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+	background-image: url('../../../assets/images/calendar-event.png');
+	background-size: cover;
+	width: 20px;
+	height: 20px;
+  }
+  .custom-form .form-control {
+	background-color: #fff;
+  }
+  
+  .custom-form .btn {
+	background-color: #151516;
+	color: orange;
+	border: none;
+	padding: 10px;
+	font-size: clamp(1rem, 2.5vw, 1.2rem);
+	font-weight: bold;
+	border-radius: 4px;
+	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+	transition: background-color 0.3s ease;
+  }
+  
+  .custom-form .btn:hover {
+	background-color: white;
+  }
+  
+  .custom-form .input:focus {
+	outline: none;
+	box-shadow: none;
+	border-color: #80bdff;
+  }
+  
+
+.search-form .formhead {
+    margin-bottom: 0.5rem; /* Adjust as needed */
+    font-size: 1.5rem; /* Adjust as needed */
+}
+
+.custom-form {
+    width: 100%;
+    padding: 10px; /* Adjust padding */
+    background-color: transparent;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.custom-form .form-control {
+    font-size: 1rem; /* Adjust as needed */
+    margin-bottom: 0.5rem; /* Reduce margin to decrease height */
+}
+
+.btn.submitbutton {
+    font-size: 1rem; /* Adjust as needed */
+    padding: 0.5rem; /* Adjust padding */
+}
+
+@media (max-width: 768px) {
+    .background-image {
+        height: auto; /* Adjust height */
+        background-size: cover;
+    }
+    .left-section, .right-section {
+        height: auto;
+    }
+    .search-form {
+        width: 90%; /* Decrease the width for smaller screens */
+    }
+}
