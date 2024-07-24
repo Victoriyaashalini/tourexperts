@@ -41,20 +41,22 @@
     font-family: "Merriweather", serif;
     font-weight: 300;
     font-style: normal;
-    font-size: clamp(1rem, 2vw, 1.5rem); /* Adjust values as needed */
 }
 
 .bg-image {
-    background-image: url('../../../assets/images/barry-talley-PkN2ExU2MX0-unsplash\ \(1\).jpg'); /* Ensure the path is correct */
-    background-size: cover;
+background-color:rgba(32, 178, 171, 0.925) ;  
+  background-size: cover;
+  
     background-position: center;
     background-repeat: no-repeat;
-    height: 50vh; /* Adjust the initial height as needed */
-    filter: brightness(90%); /* Example filter */
+    height: 30vh; /* Adjust the initial height as needed */
 }
 
 .content {
     max-width: 80%;
+    margin-top: 60px;
+    padding: 90px;
+   
 }
 
 @media (max-width: 1200px) {
@@ -82,7 +84,7 @@
 }
 
 .contactus {
-    color: rgb(255, 255, 255);
+    color: rgb(255, 254, 254);
     font-size: clamp(1.5rem, 3vw, 3rem); /* Adjust values as needed */
 }
 
@@ -100,9 +102,9 @@
 }
 
 .traveler-connect h2 {
-    color: #121415;
+    color: #3f3f3f;
     font-family: "PT Serif", serif;
-    font-size: clamp(1.3rem, 3vw, 2rem); /* Adjust values as needed */
+    font-size: clamp(1.5rem, 3vw, 2rem);
 }
 
 .card {
@@ -115,9 +117,9 @@
 
 .card-title {
     margin-bottom: 1rem;
-    color: #343a40;
-    font-family: "Merriweather", serif;
-    font-size: clamp(1rem, 3vw, 1.2rem); /* Adjust values as needed */
+    color: #11829b;
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(1rem, 3vw, 1.2rem);
 }
 
 .card-text i {
@@ -127,7 +129,8 @@
 
 .card-text {
     font-family: "Open Sans", sans-serif;
-    font-size: clamp(0.675rem, 2vw, 0.875rem); /* Adjust values as needed */
+    font-size: clamp(0.975rem, 2vw, 1rem); 
+    color: rgb(105, 103, 103);/* Adjust values as needed */
 }
 
 .breadcrumb {
@@ -192,26 +195,13 @@
     font-size: clamp(1.5rem, 3vw, 2.5rem); /* Adjust values as needed */
 }
 
-.connect {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: clamp(1.5rem, 3vw, 2.5rem); /* Adjust values as needed */
-}
+// .connect {
+//     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+//     font-size: clamp(1.5rem, 3vw, 2.5rem); /* Adjust values as needed */
+// }
 
-.contactform-container form {
-    width: 100%;
-    padding: 20px; /* Add padding inside the form */
-    border-radius: 8px; /* Optional: Add rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border: grey; /* Optional: Add a subtle shadow */
-}
 
-.custom-form {
-    width: 80%;
-    max-width: 500px;
-    padding: 2rem !important;
-    background-color: transparent;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
+
 
 .custom-form .form-control {
     background-color: rgb(255, 255, 255);
@@ -243,22 +233,19 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .callicon {
     color: rgb(0, 0, 0);
     text-decoration: none;
-    font-size: clamp(1rem, 2vw, 1.5rem); /* Adjust values as needed */
+    font-size: clamp(0.975rem, 2vw, 1rem); /* Adjust values as needed */
 }
 
-.image-container {
-    position: relative;
-}
 
-.overlay-links {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+// .overlay-links {
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+// }
 
 .callicon {
     display: flex;
@@ -285,9 +272,141 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     font-size: clamp(1.5rem, 2.5vw, 2rem); /* Adjust values as needed */
 }
 
-@media (min-width: 768px) {
-    .custom-form {
-        width: 70%;
-        max-width: 450px;
+
+
+  
+ 
+  
+.background-image {
+    background: url('../../../assets/images/luca-bravo-O453M2Liufs-unsplash.jpg') no-repeat center center;
+    background-size: cover;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .background-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(8, 8, 8, 0.5); /* Semi-transparent overlay */
+    z-index: 1;
+  }
+  
+  .container-fluid {
+    padding: 0;
+  }
+  
+  .left-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    color: rgb(253, 255, 255);
+    z-index: 2; /* Ensure it is above the overlay */
+  }
+  .left-section .content {
+    max-width: 90%;
+  }
+  .left-section p {
+    font-size: 1.2rem; /* Adjust as needed */
+    margin-bottom: 2rem;
+  }
+  
+  .left-section .contact-info {
+    margin-top: 2rem; /* Add some spacing above the contact info */
+  }
+  
+  .left-section .contact-info h2 {
+    font-size: 1.5rem; /* Adjust as needed */
+    margin-bottom: 1rem;
+  }
+  
+  .left-section .contact-info p {
+    font-size: 1rem; /* Adjust as needed */
+    margin-bottom: 0.5rem;
+  }
+  
+  
+  
+  .overlay-links {
+    margin-top: 10px;
+  }
+  
+  .overlay-links h2 {
+    margin-bottom: 10px;
+    font-size: 1.5rem; /* Adjust as needed */
+  }
+  
+  .overlay-links .callicon {
+    display: block;
+    margin: 5px 0;
+    color: white;
+    text-decoration: none;
+    font-size: 1rem; /* Adjust as needed */
+  }
+  
+  .overlay-links .callicon img {
+    vertical-align: middle;
+    margin-right: 5px;
+  }
+  
+  .right-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    z-index: 2; /* Ensure it is above the overlay */
+  }
+  
+  .search-form {
+    background: rgb(232, 232, 232);
+    width: 80%; /* Adjust width */
+    max-width: 500px; /* Max width for large screens */
+    border-radius: 20px;
+    height: auto; /* Adjust height to fit the content */
+    margin: auto; /* Center horizontally */
+  }
+  
+  .search-form .formhead {
+    margin-bottom: 0.5rem; /* Adjust as needed */
+    font-size: 1.5rem; /* Adjust as needed */
+  }
+  
+  .custom-form {
+    width: 100%;
+    padding: 10px; /* Adjust padding */
+    background-color: transparent;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  
+  .custom-form .form-control {
+    font-size: 1rem; /* Adjust as needed */
+    margin-bottom: 0.5rem; /* Reduce margin to decrease height */
+  }
+  
+  .btn.submitbutton {
+    font-size: 1rem; /* Adjust as needed */
+    padding: 0.5rem; /* Adjust padding */
+  }
+  
+  @media (max-width: 768px) {
+    .background-image {
+      height: 50%;
+      background-size: cover;
     }
-}
+    .left-section, .right-section {
+      height: auto;
+    }
+    .search-form {
+      width: 90%; /* Decrease the width for smaller screens */
+    }
+  }
+  
