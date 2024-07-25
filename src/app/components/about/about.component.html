@@ -1,1 +1,24 @@
-<p>about works!</p>
+<div class="about-us-container"
+     [@heightChange]="!isMobile && (isAnimated ? 'collapsed' : 'expanded')"
+     [ngClass]="{'mobile-animation': isMobile}">
+  <div class="content">
+    <h1>About Us</h1>
+    <button class="down-arrow" *ngIf="!isAnimated && !isMobile" (click)="animateDown()">
+      <i class="fas fa-chevron-down"></i>
+    </button>
+  </div>
+</div>
+<div class="contact-bread container">
+  <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="/home">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">About</li>
+    </ol>
+  </nav>
+</div>
+
+<div class="container about-welcome-container" *ngIf="true" @slideIn>
+  <h4>Welcome to Tour Experts</h4>
+  <p>At Tour Experts, we believe in the magic of travel. Founded with the vision to make every journey a remarkable experience, we have been providing meticulously curated travel packages for years. Our commitment to excellence ensures that you enjoy a seamless and unforgettable journey, filled with comfort and satisfaction.</p>
+  <p>Choose Tour Experts for a travel experience that is as unique as you are. Let us turn your travel dreams into unforgettable realities, crafted just for you.</p>
+</div>

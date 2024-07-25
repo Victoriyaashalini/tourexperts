@@ -1,0 +1,46 @@
+.about-us-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    background-color: #398de0;
+    transition: height 1s ease; /* Default transition duration */
+  }
+  
+  .content h1 {
+    font-size: 3rem;
+  }
+  
+  .down-arrow {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    position: absolute;
+    bottom: 40px;
+  }
+  
+  .down-arrow .fa-chevron-down {
+    font-size: 3rem;
+  }
+  
+  /* Mobile-specific styles */
+  @media (max-width: 768px) {
+    .about-us-container {
+      height: 30vh; /* Set height to 30vh for mobile */
+      transition: height 0.5s ease; /* Shorter transition for mobile */
+    }
+  
+    .mobile-animation {
+      height: 30vh; /* Ensure consistency in height for mobile */
+    }
+  }
+  .about-welcome-container {
+    // Any additional styling you might need
+    padding: 20px;
+    background-color: #f8f9fa; // Example background color
+    border-radius: 8px; // Optional, for rounded corners
+  }
+  
