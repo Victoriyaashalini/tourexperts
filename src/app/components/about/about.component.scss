@@ -5,12 +5,12 @@
     align-items: center;
     text-align: center;
     position: relative;
-    background-color: #398de0;
+    background-image: url('../../../assets/images/Untitled design (23).png');
     transition: height 1s ease; /* Default transition duration */
   }
   
   .content h1 {
-    font-size: 3rem;
+    font-size: clamp(2rem, 5vw, 3rem); /* Responsive font size */
   }
   
   .down-arrow {
@@ -23,7 +23,7 @@
   }
   
   .down-arrow .fa-chevron-down {
-    font-size: 3rem;
+    font-size: clamp(2rem, 5vw, 3rem); /* Responsive font size */
   }
   
   /* Mobile-specific styles */
@@ -37,10 +37,69 @@
       height: 30vh; /* Ensure consistency in height for mobile */
     }
   }
+  
   .about-welcome-container {
-    // Any additional styling you might need
     padding: 20px;
-    background-color: #f8f9fa; // Example background color
-    border-radius: 8px; // Optional, for rounded corners
+    border-radius: 8px;
+    margin-top: 4rem; /* Optional, for rounded corners */
   }
   
+  .contact-bread {
+    margin-top: 20px;
+  }
+  
+  .contact-bread a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  .about-welcome-container h4 {
+    font-size: clamp(1.7rem, 2.5vw, 1.75rem);
+    font-family: "Poppins", sans-serif;
+    color: rgb(26, 2, 2);
+    /* Responsive font size */
+  }
+  .about-welcome-container p{
+    font-size: 16px;
+    font-family: "Open Sans", sans-serif;
+    color: rgb(79, 78, 78);
+
+  }
+  .whytourexperrscard{
+    position: relative;
+  }
+  
+  .card-title {
+    transition: transform 0.3s ease-in-out; /* Smooth transition effect */
+  }
+  
+  
+  
+  
+  .whycard{
+    color: #12758b;
+    font-weight: bold;
+    font-family: "Poppins", sans-serif;
+
+}
+.card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    text-align: center;  /* Center text inside the card */
+  }
+  
+  .card-body img {
+    max-width: 100%; /* Ensure image doesn't overflow */
+    height: auto;    /* Maintain aspect ratio */
+    margin-bottom: 15px; /* Space between image and text */
+  }
+  
+  .card-title {
+    margin-top: 10px; /* Space between image and title */
+  }
+  .card-content{
+    color: rgb(79, 78, 78);
+    font-size: 16px;
+}
+ 
