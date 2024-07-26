@@ -1,0 +1,58 @@
+.card {
+	border: none;
+	border-radius: 10px;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	position: relative; /* Required for positioning overlay */
+  }
+  
+  .card-img-top {
+	width: 100%;
+	height: 200px; /* Set a fixed height for the image */
+	object-fit: cover; /* Ensure the image covers the area */
+	transition: transform 0.3s, filter 0.3s; /* Add transition for zoom effect and filter */
+	filter: grayscale(70%); /* Apply a grayscale filter effect */
+  }
+  
+  .card-img-top:hover {
+	transform: scale(1.1); /* Zoom-in effect */
+	filter: grayscale(0%); /* Remove grayscale on hover */
+  }
+  .card-title {
+	color: #f09819; 
+	font-weight: bold;
+ }
+  
+  .card-body {
+	background-color: #f8f9fa;
+	padding: 15px;
+	flex: 1; /* Make the card body take the remaining space */
+  }
+  
+  /* Media query for small screens */
+  @media (max-width: 575.98px) {
+	.card {
+	  max-width: 100%; /* Ensure cards take full width on small screens */
+	  margin: 0 auto;
+	}
+  
+	.card-img-top {
+	  height: 150px; /* Adjust height for smaller screens */
+	}
+  
+	.card-body {
+	  padding: 10px;
+	}
+  
+	.card-title {
+	  font-size: 14px;
+	  color: #f09819; 
+	  font-weight: bold;
+	}
+  
+	.card-text {
+	  font-size: 12px;
+	}
+  }
+  

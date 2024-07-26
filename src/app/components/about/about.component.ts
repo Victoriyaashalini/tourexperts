@@ -2,11 +2,12 @@ import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgForOf } from '@angular/common';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import { OurexpertsComponent } from "../../secondorycomponent/ourexperts/ourexperts.component";
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [CommonModule,NgForOf],
+  imports: [CommonModule, NgForOf, OurexpertsComponent],
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss',
   animations: [
