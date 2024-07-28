@@ -1,0 +1,38 @@
+.card {
+	position: relative;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+  }
+  
+  .card-img-top {
+	height: 200px;
+	object-fit: cover;
+  }
+  
+  .card-body {
+	position: relative;
+	padding-bottom: 40px; /* Add extra space at the bottom to accommodate the overlay */
+  }
+  
+  .overlay {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	color: white;
+	padding: 5px 10px;
+	border-top-left-radius: 8px;
+  }
+  
+  .location {
+	font-weight: bold;
+  }
+  
+  .type {
+	font-style: italic;
+  }
+  
+  .card-text {
+	margin-bottom: 30px; /* Add margin to create space between description and the overlay */
+  }
+  

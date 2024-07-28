@@ -1,4 +1,13 @@
-.card {
+
+.playfair-display {
+	font-family: "Playfair Display", serif;
+	font-optical-sizing: auto;
+	font-weight: 500;
+			font-style: normal;
+  }
+  
+
+  .card {
 	border: none;
 	border-radius: 10px;
 	overflow: hidden;
@@ -21,15 +30,20 @@
   }
   .card-title {
 	color: #f09819; 
-	font-weight: bold;
+	font-family: "Poppins", sans-serif;
+
  }
   
   .card-body {
-	background-color: #f8f9fa;
+	background-color: #0f0e0e;
 	padding: 15px;
 	flex: 1; /* Make the card body take the remaining space */
   }
-  
+  .card-text {
+	color: white;
+	font-family: "Open Sans", sans-serif;
+
+  }
   /* Media query for small screens */
   @media (max-width: 575.98px) {
 	.card {
@@ -53,6 +67,7 @@
   
 	.card-text {
 	  font-size: 12px;
+	  color: white;
 	}
   }
   

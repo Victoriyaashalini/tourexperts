@@ -1,5 +1,5 @@
 <div class="container my-5">
-	<h2 class="experts-heading mb-5 text-center">Our Experts</h2>
+	<h2 class="experts-heading mb-5 text-center playfair-display">Our Experts</h2>
 
 	<div class="row">
 	  <div class="col-lg-3 col-md-4 col-sm-6 col-6" *ngFor="let member of teamMembers">
@@ -7,7 +7,7 @@
 		  <img [src]="member.image" class="card-img-top" alt="{{member.name}}">
 		  <div class="card-body text-center">
 			<h5 class="card-title">{{member.name}}</h5>
-			<p class="card-text text-muted">{{member.title}}</p>
+			<p class="card-text ">{{member.title}}</p>
 		  </div>
 		</div>
 	  </div>

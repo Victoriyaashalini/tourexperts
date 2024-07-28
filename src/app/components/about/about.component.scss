@@ -1,3 +1,10 @@
+.playfair-display {
+	font-family: "Playfair Display", serif;
+	font-optical-sizing: auto;
+	font-weight: 500;
+			font-style: normal;
+  }
+
 .about-us-container {
     height: 100vh;
     display: flex;
@@ -53,9 +60,8 @@
     color: black;
   }
   
-  .about-welcome-container h4 {
+  .about-welcome-container h2 {
     font-size: clamp(1.7rem, 2.5vw, 1.75rem);
-    font-family: "Poppins", sans-serif;
     color: rgb(26, 2, 2);
     /* Responsive font size */
   }
@@ -73,12 +79,15 @@
     transition: transform 0.3s ease-in-out; /* Smooth transition effect */
   }
   
-  
+  .whytourexpertscontain h2{
+    font-family: "Playfair Display", serif;
+
+  }
   
   
   .whycard{
     color: #12758b;
-    font-weight: bold;
+    font-weight: 500;
     font-family: "Poppins", sans-serif;
 
 }

@@ -3,11 +3,12 @@ import { HomecarouselComponent } from '../homecarousel/homecarousel.component';
 import { PackagesComponent } from "../packages/packages.component";
 import { computeMsgId } from '@angular/compiler';
 import { CommonModule } from '@angular/common';
+import { HomepackageComponent } from '../homepackage/homepackage.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [HomecarouselComponent, PackagesComponent,CommonModule],
+  imports: [HomecarouselComponent, PackagesComponent,CommonModule,HomepackageComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

@@ -1,0 +1,40 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container-fluid,
+.container {
+  width: 100%;
+  padding: 0 15px;
+}
+
+.bg-image {
+  background-image: url('../../../assets/images/island_11zon.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+@media (max-width: 1200px) { .bg-image { height: 40vh; } }
+@media (max-width: 992px) { .bg-image { height: 35vh; } }
+@media (max-width: 768px) { .bg-image { height: 30vh; } }
+@media (max-width: 576px) { .bg-image { height: 25vh; } }
+
+.content {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.contactus {
+  color: #fff;
+  font-size: clamp(1.5rem, 3vw, 3rem);
+  text-align: center;
+}
