@@ -1,7 +1,14 @@
-<app-typeheadfilter (keywordSelected)="onKeywordSelected($event)"></app-typeheadfilter>
+<section>
+  <div class="container-fluid bg-image">
+    <div class="cont">
+      <h1 class="conta">DESTINATION</h1>
+      <app-typeheadfilter (keywordSelected)="onKeywordSelected($event)"></app-typeheadfilter>
+    </div>
+  </div>
+</section>
 
-<div *ngIf="filteredTours.length">
-  <div class="container">
+<!-- <div *ngIf="filteredTours.length">
+  <div class="container tourcard">
     <div class="row">
       <div class="col-lg-4 col-md-6 col-12 mb-4" *ngFor="let tour of filteredTours">
         <div class="card">
@@ -20,7 +27,29 @@
       </div>
     </div>
   </div>
+</div> -->
+<div *ngIf="filteredTours.length">
+  <div class="container tourcard">
+    <div class="row">
+      <div class="col-lg-3 col-md-6 col-12 mb-4" *ngFor="let tour of filteredTours">
+        <div class="card">
+          <div class="card-img-wrapper">
+            <img [src]="tour.imageUrl" class="card-img-top" alt="{{ tour.name }}">
+            <div class="days-overlay">{{ tour.days }} Days</div>
+          </div>
+          <div class="card-body d-flex flex-column">
+            <div class="d-flex justify-content-between">
+              <span class="location">{{ tour.location }}</span>
+              <span class="type">{{ tour.type }}</span>
+            </div>
+            <p class="card-text mt-2">{{ tour.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
 
 <div *ngIf="!filteredTours.length">
   <p>No tours found.</p>

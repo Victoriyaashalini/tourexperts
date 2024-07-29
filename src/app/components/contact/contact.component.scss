@@ -38,17 +38,7 @@
 @media (max-width: 768px) { .bg-image { height: 30vh; } }
 @media (max-width: 576px) { .bg-image { height: 25vh; } }
 
-.content {
-  max-width: 80%;
-  margin: 0 auto;
-  padding: 90px 15px;
-}
 
-.contactus {
-  color: #fff;
-  font-size: clamp(1.5rem, 3vw, 3rem);
-  text-align: center;
-}
 
 /* Breadcrumb adjustments */
 .contact-bread {

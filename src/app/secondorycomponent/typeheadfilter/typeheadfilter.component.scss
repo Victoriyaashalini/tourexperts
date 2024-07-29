@@ -1,16 +1,32 @@
-input {
+.container {
 	width: 100%;
-	padding: 8px;
-	box-sizing: border-box;
+	margin-top: 20px;
   }
   
-  ul {
-	list-style-type: none;
-	padding: 0;
+ 
+  
+  .input-group {
+	width: 100%;
   }
   
-  li {
-	padding: 4px;
-	border-bottom: 1px solid #ddd;
+  .form-control {
+	height: 60px;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	font-size: 18px;
+  }
+  
+  .input-group-append .btn {
+	height: 60px;
+	background-color: #000080; /* Navy color */
+	border: none;
+	color: white;
+	font-size: 18px;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+  }
+  
+  .list-group-item {
+	cursor: pointer;
   }
   

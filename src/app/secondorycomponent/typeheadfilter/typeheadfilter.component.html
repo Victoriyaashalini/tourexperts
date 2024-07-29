@@ -1,2 +1,15 @@
-<input type="text" [(ngModel)]="inputValue" />
-<button (click)="onSearch()">Search</button>
+<div class="container-fluid ">
+	<div class="row justify-content-center">
+	  <div class="col-12 col-md-8">
+		<div class="input-group">
+		  <input type="text" [(ngModel)]="inputValue" class="form-control" placeholder="Search the Knowledge Base"  />
+		  <div class="input-group-append">
+			<button (click)="onSearch()" class="btn btn-primary">
+			  <i class="fa fa-search"></i> <!-- Optional: FontAwesome icon for search -->
+			</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  </div>
+  

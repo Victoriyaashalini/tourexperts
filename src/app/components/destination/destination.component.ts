@@ -10,14 +10,26 @@ import { CommonModule } from '@angular/common';
   styleUrl: './destination.component.scss'
 })
 export class DestinationComponent {
+  allTours: any[] = [];
   filteredTours: any[] = [];
 
   constructor(private destinationService: DestinationserviceService) {}
 
-  onKeywordSelected(keyword: string) {
-    this.destinationService.filterTourPackages(keyword).subscribe(tours => {
-      this.filteredTours = tours;
+  ngOnInit() {
+    this.loadAllTours();
+  }
+
+  loadAllTours() {
+    this.destinationService.getTourPackages().subscribe(tours => {
+      this.allTours = tours;
+      this.filteredTours = tours; // Initially display all tours
     });
+  }
+
+  onKeywordSelected(keyword: string) {
+    this.filteredTours = this.allTours.filter(tour => 
+      tour.country.toLowerCase().includes(keyword.toLowerCase())
+    );
   }
   }
  

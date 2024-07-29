@@ -17,7 +17,7 @@ export class DestinationserviceService {
         "fun"
       ],
       "description": "Description for Tour Package 1.",
-      "imageUrl": "assets/images/tour-package-1.jpg",
+      "imageUrl": "../../assets/images/majkl-velner-nKY59_d9FlA-unsplash.jpg",
       "location": "Istanbul",
       "country": "Turkey"
     },
