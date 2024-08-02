@@ -1,128 +1,24 @@
-<!-- <div class="container my-5">
-	<div class="row">
-	  <div class="col-12 col-md-6 col-lg-4 mb-4">
-		<div class="p-3 bg-dark text-white">
-		  <h5>Unlimited royalty-free downloads</h5>
-		  <p>Use them as many times as you want.</p>
-		</div>
-	  </div>
-	  <div class="col-12 col-md-6 col-lg-4 mb-4">
-		<div class="p-3 bg-dark text-white text-center">
-		  <h2>PACKAGES</h2>
-		</div>
-	  </div>
-	  <div class="col-12 col-md-6 col-lg-4 mb-4">
-		<div class="p-3 bg-dark text-white">
-		  <h5>High-quality illustrations</h5>
-		  <p>That make your projects stand out.</p>
-		  <img src="../../../assets/images/Untitled design (15) (1).png" alt="Illustration" class="img-fluid">
-		</div>
-	  </div>
-	 
-	  <div class="col-12 col-md-6 col-lg-4 mb-4">
-		<div class="p-3 bg-dark text-white">
-		  <h5>Enhanced legal protections</h5>
-		  <p>All visuals are model and property released. Can be used in any commercial project and are backed by Unsplash+ Protection.</p>
-		</div>
-	  </div>
-	  <div class="col-12 col-md-6 col-lg-4 mb-4">
-		<div class="p-3 bg-dark text-white text-center">
-		  <img src="../../../assets/images/meizhi-lang-dhRPNu1lnQw-unsplash (1) (1).jpg" alt="Main Image" class="img-fluid">
-		</div>
-	  </div>
-	  <div class="col-12 col-md-6 col-lg-4 mb-4">
-		<div class="p-3 bg-dark text-white">
-		  <h5>New visuals added monthly</h5>
-		  <p>Exclusively available to Unsplash+ members.</p>
-		  <img src="../../../assets/images/tegan-mierle-fDostElVhN8-unsplash (1).jpg" alt="New Visuals" class="img-fluid">
-		</div>
-	  </div>
-	</div>
-  </div>
-   -->
-   <div class="container my-5">
-	<div class="row">
-	  <!-- Card 1 -->
-	  <div class="col-12 col-md-6 col-lg-4 mb-4" id="card-1">
-		<a href="/islandPackage" class="card-link">
-		  <div class="card">
-			<div class="card-img-wrapper">
-			  <img src="../../../assets/images/island_11zon.jpg" class="card-img-top" alt="Illustration">
-			  <div class="card-img-overlay">
-				<h5 class="card-title">ISLAND</h5>
-			  </div>
+
+   <div class="container mt-4">
+	<h3 class="mb-5 packages">Packages</h3>
+	<div class="row g-4">
+	  <div class="col-lg-4 col-md-6 mb-4" *ngFor="let packageType of packageTypes">
+		<a href="#" class="card-link">
+		  <div class="card h-100 shadow-sm border-0 rounded position-relative overflow-hidden">
+			<div class="image-container position-relative">
+			  <img class="card-img-top rounded-top zoom-effect" [src]="packageType.image" alt="{{ packageType.title }}">
 			</div>
-		  </div>
-		</a>
-	  </div>
-  
-	  <!-- Card 2 (Title Only) -->
-	  <div class="col-12 mb-4" id="card-2">
-		<a href="your-link-url-2" class="card-link">
-		  <div class="card bg-dark text-white text-center">
 			<div class="card-body">
-			  <h2 class="card-title">PACKAGES</h2>
-			</div>
-		  </div>
-		</a>
-	  </div>
-  
-	  <!-- Card 3 -->
-	  <div class="col-12 col-md-6 col-lg-4 mb-4" id="card-3">
-		<a href="your-link-url-3" class="card-link">
-		  <div class="card">
-			<div class="card-img-wrapper">
-			  <img src="../../../assets/images/india.jpg" class="card-img-top" alt="Illustration">
-			  <div class="card-img-overlay">
-				<h5 class="card-title">INDIA</h5>
-			  </div>
-			</div>
-		  </div>
-		</a>
-	  </div>
-  
-	  <!-- Card 4 -->
-	  <div class="col-12 col-md-6 col-lg-4 mb-4" id="card-4">
-		<a href="your-link-url-4" class="card-link">
-		  <div class="card">
-			<div class="card-img-wrapper">
-			  <img src="../../../assets/images/internation_11zon.jpg" class="card-img-top" alt="Main Image">
-			  <div class="card-img-overlay">
-				<h5 class="card-title">INTERNATIONAL</h5>
-			  </div>
-			</div>
-		  </div>
-		</a>
-	  </div>
-  
-	  <!-- Card 5 -->
-	  <div class="col-12 col-md-6 col-lg-4 mb-4" id="card-5">
-		<a href="your-link-url-5" class="card-link">
-		  <div class="card">
-			<div class="card-img-wrapper">
-			  <img src="../../../assets/images/group_11zon.jpg" class="card-img-top" alt="New Visuals">
-			  <div class="card-img-overlay">
-				<h5 class="card-title">GROUP TOUR</h5>
-			  </div>
-			</div>
-		  </div>
-		</a>
-	  </div>
-  
-	  <!-- Missing Card -->
-	  <div class="col-12 col-md-6 col-lg-4 mb-4" id="card-6">
-		<a href="your-link-url-6" class="card-link">
-		  <div class="card">
-			<div class="card-img-wrapper">
-			  <img src="../../../assets/images/honeymoon-min_11zon.jpg" class="card-img-top" alt="Additional Image">
-			  <div class="card-img-overlay">
-				<h5 class="card-title">HONEYMOON</h5>
-			  </div>
+			  <h5 class="card-title text-center">{{ packageType.title }}</h5>
+			  <p class="card-text text-center">{{ packageType.description }}</p>
 			</div>
 		  </div>
 		</a>
 	  </div>
 	</div>
   </div>
+  
+  
+  
   
   

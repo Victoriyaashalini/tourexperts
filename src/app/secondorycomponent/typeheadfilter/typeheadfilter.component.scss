@@ -1,32 +1,43 @@
-.container {
+.container-fluid {
 	width: 100%;
 	margin-top: 20px;
   }
-  
- 
   
   .input-group {
 	width: 100%;
   }
   
   .form-control {
-	height: 60px;
+	height: 80px; /* Increased height */
 	border-top-left-radius: 10px;
 	border-bottom-left-radius: 10px;
-	font-size: 18px;
+	font-size: 20px; /* Increased font size */
   }
   
   .input-group-append .btn {
-	height: 60px;
+	height: 80px; /* Increased height */
 	background-color: #000080; /* Navy color */
 	border: none;
 	color: white;
-	font-size: 18px;
+	font-size: 20px; /* Increased font size */
 	border-top-right-radius: 10px;
 	border-bottom-right-radius: 10px;
   }
   
   .list-group-item {
 	cursor: pointer;
+  }
+  
+  /* Media queries for mobile breakpoints */
+  @media (max-width: 767.98px) {
+	.form-control {
+	  height: 50px; /* Decreased height for mobile */
+	  font-size: 16px; /* Decreased font size for mobile */
+	}
+  
+	.input-group-append .btn {
+	  height: 50px; /* Decreased height for mobile */
+	  font-size: 16px; /* Decreased font size for mobile */
+	}
   }
   

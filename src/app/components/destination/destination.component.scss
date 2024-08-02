@@ -1,11 +1,23 @@
+.gupter-regular {
+  font-family: "Gupter", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.josefin-sans {
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: italic;
+}
 
 .tourcard .card {
   border-radius: 5px;
   overflow: hidden;
   position: relative;
   width: 100%;
-  max-width: 100%; /* Ensure cards use full column width */
-  margin: auto; /* Center card */
+  max-width: 100%;
+  margin: auto;
 }
 
 .tourcard .card-img-wrapper {
@@ -27,39 +39,146 @@
   position: absolute;
   bottom: 10px;
   left: 10px;
-  background: rgba(0, 0, 0, 0.6); /* Semi-transparent background for consistent look */
-  color: #fff; /* White text for high contrast */
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
   font-size: 14px;
-  font-weight: normal; /* Normal weight for less emphasis */
   padding: 8px 12px;
   border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Light shadow for better visibility */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .tourcard .card-body {
-  padding: 15px; /* Reduce padding */
+  padding: 15px;
   background: linear-gradient(135deg, #f9f9f9, #fff);
 }
 
 .tourcard .d-flex {
-  margin-bottom: 10px; /* Reduce margin */
+  margin-bottom: 10px;
 }
 
-.tourcard .location, .tourcard .type {
-  font-size: 14px;
+.tourcard .location, .tourcard  {
+  font-size: 13px;
   font-weight: bold;
-  color: #444;
+}
+.type{
+font-weight: 400;
 }
 
+.tourcard .location {
+  font-size: 14px;
+  color: #4a4949;
+  display: flex;
+  align-items: center;
+}
 
-
-.tourcard .type {
-  font-style: italic;
+.tourcard .location i {
+  font-size: 12px;
+  margin-right: 5px;
+  color: #aeaeae;
 }
 
 .tourcard .card-text {
-  font-size: 16px;
+  font-size: 18px;
   color: #333;
-  line-height: 1.5;
-  margin-bottom: 10px; /* Adjust margin */
+  line-height: 1.2;
+  margin-bottom: 5px;
+}
+
+.custom-container {
+  background-color: lightcoral;
+  padding: 40px 0;
+  height: 400px; /* Increased height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers content vertically */
+}
+
+.destination-heading {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.custom-width {
+  max-width: 100%;
+  padding: 0 15px;
+}
+
+@media (max-width: 767.98px) {
+  .destination-heading {
+    font-size: 1.5em;
+  }
+
+  .custom-width {
+    padding: 0 15px;
+  }
+
+  .custom-container {
+    padding: 20px 0;
+  }
+
+  .tourcard .card-img-top {
+    height: 180px;
+  }
+}
+
+.typeheadfilter .input-group {
+  width: 100%;
+}
+
+.typeheadfilter .form-control {
+  height: 60px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  font-size: 18px;
+}
+
+.typeheadfilter .input-group-append .btn {
+  height: 60px;
+  background-color: #000080;
+  border: none;
+  color: white;
+  font-size: 18px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+/* Add margin and padding to adjust the layout */
+.container-fluid.custom-container {
+  margin-top: 40px;
+  padding: 20px;
+  height: 400px;
+  text-align: center;
+}
+
+.input-group {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.form-control {
+  height: 60px;
+  font-size: 18px;
+}
+
+.input-group-append .btn {
+  height: 60px;
+  font-size: 18px;
+}
+
+/* Add media query for mobile responsiveness */
+@media (max-width: 767.98px) {
+  .form-control {
+    height: 50px;
+    font-size: 16px;
+  }
+
+  .input-group-append .btn {
+    height: 50px;
+    font-size: 16px;
+  }
+
+  .input-group {
+    max-width: 100%;
+  }
 }

@@ -1,4 +1,4 @@
-import { Component,HostListener, OnInit  } from '@angular/core';
+import { Component,HostListener, OnInit,AfterViewInit  } from '@angular/core';
 import { HomecarouselComponent } from '../homecarousel/homecarousel.component';
 import { PackagesComponent } from "../packages/packages.component";
 import { computeMsgId } from '@angular/compiler';
@@ -12,7 +12,7 @@ import { HomepackageComponent } from '../homepackage/homepackage.component';
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, AfterViewInit  {
   
   customerCount: number = 50;
   displayCustomerCount: number = 0;
@@ -25,9 +25,7 @@ export class HomeComponent implements OnInit {
   destinationInterval: any;
   partnerInterval: any;
 
-  constructor() { }
 
-  ngOnInit(): void { }
 
   @HostListener('window:scroll', [])
   onScroll(): void {
@@ -61,5 +59,51 @@ export class HomeComponent implements OnInit {
         }
       }
     }, 20); // Update every 20 milliseconds
+  }
+  private quote: string = 'Discover the World Like Never Before!';
+  private words: string[] = [];
+  private index: number = 0;
+  private typingSpeed: number = 150; // Adjust this value to control the speed
+  private effectStarted: boolean = false;
+
+  constructor() {
+    this.words = this.quote.split(' ');
+  }
+
+  ngOnInit() {}
+
+  ngAfterViewInit() {
+    this.observeSection();
+  }
+
+  observeSection() {
+    const quoteSection = document.getElementById('quoteSection');
+    if (quoteSection) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !this.effectStarted) {
+            this.effectStarted = true;
+            this.typeWriterEffect();
+          }
+        });
+      }, {
+        threshold: 0.1 // Trigger the effect when 10% of the section is visible
+      });
+
+      observer.observe(quoteSection);
+    }
+  }
+
+  typeWriterEffect() {
+    if (this.index < this.words.length) {
+      const quoteElement = document.getElementById('quote');
+      if (quoteElement) {
+        // Add up to three words at a time
+        const nextWords = this.words.slice(this.index, this.index + 2).join(' ');
+        quoteElement.innerHTML += nextWords + '<br>';
+        this.index += 2;
+        setTimeout(() => this.typeWriterEffect(), this.typingSpeed); // Adjust speed here
+      }
+    }
   }
 }

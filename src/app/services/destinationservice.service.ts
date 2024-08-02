@@ -9,14 +9,14 @@ export class DestinationserviceService {
   private tourPackages = [
     {
       "id": 1,
-      "name": "Tour Package 1",
+      "name": "Istanbul",
       "days": 4,
       "type": "East India",
       "keywords": [
         "beach",
         "fun"
       ],
-      "description": "Description for Tour Package 1.",
+      "description": "Enchanting with romantic couple and newly wedding",
       "imageUrl": "../../assets/images/majkl-velner-nKY59_d9FlA-unsplash.jpg",
       "location": "Istanbul",
       "country": "Turkey"
