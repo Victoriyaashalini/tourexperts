@@ -12,18 +12,18 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3  # Updated version
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3  # Updated version
         with:
-          node-version: '16'  # Use the Node.js version you need
+          node-version: '20'  # Use the latest LTS or your required Node.js version
 
       - name: Install dependencies
         run: npm install
 
       - name: Build project
-        run: npm run build --prod  # Adjust if necessary for your build command
+        run: npm run build   # Adjust if necessary for your build command
 
       - name: Deploy to Netlify
         env:
