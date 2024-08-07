@@ -4,11 +4,12 @@ import { PackagesComponent } from "../packages/packages.component";
 import { computeMsgId } from '@angular/compiler';
 import { CommonModule } from '@angular/common';
 import { HomepackageComponent } from '../homepackage/homepackage.component';
+import { PopularcarouselComponent } from "../../secondorycomponent/popularcarousel/popularcarousel.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [HomecarouselComponent, PackagesComponent,CommonModule,HomepackageComponent],
+  imports: [HomecarouselComponent, PackagesComponent, CommonModule, HomepackageComponent, PopularcarouselComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

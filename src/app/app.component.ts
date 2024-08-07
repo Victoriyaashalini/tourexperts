@@ -5,12 +5,13 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { NgbTypeaheadModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbCarouselModule, NgbTypeaheadModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
+import { FooterComponent } from './components/footer/footer.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NavbarComponent,CommonModule,RouterModule,HttpClientModule,FormsModule,NgbTypeaheadModule],
+  imports: [RouterOutlet, NavbarComponent,CommonModule,RouterModule,HttpClientModule,FormsModule,NgbTypeaheadModule,FooterComponent,NgbCarouselModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

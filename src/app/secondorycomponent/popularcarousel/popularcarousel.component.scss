@@ -1,0 +1,52 @@
+.custom-carousel {
+	.carousel-inner {
+	  .carousel-item {
+		display: flex;
+		justify-content: center;
+		
+		.card {
+		  width: 18rem;
+		}
+	  }
+	}
+  
+	.carousel-control-prev, 
+	.carousel-control-next {
+	  width: 3rem;
+	  height: 3rem;
+	  background: transparent;
+	  border: none;
+  
+	  .carousel-control-prev-icon,
+	  .carousel-control-next-icon {
+		background-size: 2rem 2rem;
+	  }
+  
+	  &:hover {
+		background-color: rgba(0, 0, 0, 0.1); // Optional hover effect
+	  }
+	}
+  
+	.carousel-control-prev {
+	  .carousel-control-prev-icon {
+		background-image: url('../../../assets/images/icons8-previous-location-60.png');
+	  }
+	}
+  
+	.carousel-control-next {
+	  .carousel-control-next-icon {
+		background-image: url('../../../assets/images/icons8-next-location-30.png');
+	  }
+	}
+  }
+  .custom-carousel {
+	.carousel-item {
+	  @media (max-width: 768px) {
+		.card {
+		  width: 100%;
+		}
+	  }
+	}
+  }
+  
+  
