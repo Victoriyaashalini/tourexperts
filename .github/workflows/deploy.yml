@@ -29,6 +29,6 @@ jobs:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
         run: |
           curl -s -H "Authorization: Bearer $NETLIFY_AUTH_TOKEN" \
-            -F "file=@dist/tourexpertsmean" \  # Ensure this path is correct
-            -F "clear=true" \
-            https://api.netlify.com/api/v1/sites/fb81c2ed-c270-4684-b4a9-6363dbd57e19/deploys
+        -F "file=@dist/tourexpertsmean" \
+        -F "clear=true" \
+        https://api.netlify.com/api/v1/sites/fb81c2ed-c270-4684-b4a9-6363dbd57e19/deploys
