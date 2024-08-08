@@ -16,7 +16,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3  # Updated to v3
         with:
-          node-version: '18'  # Updated to a newer version, if necessary
+          node-version: '20'  # Updated to Node.js 20
 
       - name: Install dependencies
         run: npm install
@@ -25,10 +25,10 @@ jobs:
         run: npm run build --configuration=production  # Ensure this matches your build command
 
       - name: Deploy to Netlify
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-        run: |
-          curl -s -H "Authorization: Bearer $NETLIFY_AUTH_TOKEN" \
-            -F "file=@dist/tourexpertsmean" \  # Ensure this path is correct
-            -F "clear=true" \
-            https://api.netlify.com/api/v1/sites/fb81c2ed-c270-4684-b4a9-6363dbd57e19/deploys
+  env:
+    NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+  run: |
+    curl -s -H "Authorization: Bearer $NETLIFY_AUTH_TOKEN" \
+      -F "file=@dist/tourexpertsmean/browser" \
+      -F "clear=true" \
+      https://api.netlify.com/api/v1/sites/nfp_JSBW8Q6oWfEZaHdWKX5Etgn2uu1Z8g2U6524/deploys
