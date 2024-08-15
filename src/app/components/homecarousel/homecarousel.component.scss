@@ -1,75 +1,138 @@
+// .carousel-item {
+// 	transition: transform 1s ease, opacity 1s ease-in-out;
+// 	height: 650px; /* Adjusted height for desktop */
+// }
+
+// .carousel-item img {
+// 	width: 100%;
+// 	height: 100%;
+// 	object-fit: cover;
+// }
+
+// .card-img-top {
+// 	width: 100%;
+// 	height: 200px; /* Adjusted height for cards */
+// 	object-fit: cover;
+// 	border: 2px solid #fff; /* White border */
+// }
+
+// .card-title {
+// 	text-align: center;
+// 	font-size: 1.2rem;
+// 	font-weight: bold;
+// }
+
+// .footer {
+// 	background-color: #3476b8;
+// 	padding: 20px;
+// 	border-top: 1px solid #e7e7e7;
+// 	margin-top: 20px;
+// }
+
+// .footer p {
+// 	margin: 0;
+// }
+
+// /* Ensure no padding for columns within the row */
+// .no-gutters {
+// 	margin-right: 0;
+// 	margin-left: 0;
+// }
+
+// .no-gutters > .col,
+// .no-gutters > [class*="col-"] {
+// 	padding-right: 0;
+// 	padding-left: 0;
+// }
+
+// /* Responsive column widths */
+// @media (max-width: 1200px) {
+// 	.carousel-item {
+// 		height: 550px; /* Adjusted height for tablets */
+// 	}
+// }
+
+// @media (max-width: 992px) {
+// 	.carousel-item {
+// 		height: 400px; /* Adjusted height for medium screens */
+// 	}
+// 	.card-img-top {
+// 		height: 150px; /* Adjusted height for cards on medium screens */
+// 	}
+// }
+
+// @media (max-width: 768px) {
+// 	.carousel-item {
+// 		height: 300px; /* Adjusted height for small screens */
+// 	}
+// 	.card-img-top {
+// 		height: 120px; /* Adjusted height for cards on small screens */
+// 	}
+// }
+
+// @media (max-width: 576px) {
+// 	.carousel-item {
+// 		height: 200px; /* Adjusted height for extra small screens */
+// 	}
+// 	.card-img-top {
+// 		height: 100px; /* Adjusted height for cards on extra small screens */
+// 	}
+// }
 .carousel-item {
-	transition: transform 1s ease, opacity 1s ease-in-out;
-	height: 660px; /* Default height */
-  }
-  
-  .carousel-item img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-  }
-  
-  .card-img-top {
-	width: 100%;
-	height: 200px; /* Adjust height as needed */
-	object-fit: cover;
-  }
-  
-  .card-title {
-	text-align: center;
-	font-size: 1.2rem;
-	font-weight: bold;
-  }
-  
-  .footer {
-	background-color: #3476b8;
-	padding: 20px;
-	border-top: 1px solid #e7e7e7;
-	margin-top: 20px;
-  }
-  
-  .footer p {
-	margin: 0;
-  }
-  
-  /* Ensure no padding for columns within the row */
-  .no-gutters {
-	margin-right: 0;
-	margin-left: 0;
-  }
-  
-  .no-gutters > .col,
-  .no-gutters > [class*="col-"] {
-	padding-right: 0;
-	padding-left: 0;
-  }
-  
-  /* Responsive column widths */
-  @media (max-width: 1200px) {
-	.col-md-4 {
-	  flex: 0 0 33.33%;
-	  max-width: 33.33%;
-	}
-  }
-  
-  @media (max-width: 992px) {
-	.col-md-4 {
-	  flex: 0 0 33.33%;
-	  max-width: 33.33%;
-	}
-  }
-  
-  @media (max-width: 768px) {
-	.col-md-4 {
-	  flex: 0 0 33.33%;
-	  max-width: 33.33%;
-	}
-  }
-  
-  @media (max-width: 576px) {
-	.col-md-4 {
-	  flex: 0 0 33.33%;
-	  max-width: 33.33%;
-	}
-  }
-  
+    transition: transform 1s ease, opacity 1s ease-in-out;
+    height: 650px; /* Adjusted height for the entire carousel */
+    overflow: hidden; /* Ensure no overflow is visible */
+}
+
+.carousel-item .card {
+    border: none; /* Remove card border */
+    margin: 0; /* Remove card margin */
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0; /* No border radius for full alignment */
+    display: block; /* Ensure the image is displayed as a block element */
+}
+
+.card-img-top {
+    width: 100%;
+    height: 400px; /* Adjusted height for images in the first slide */
+    object-fit: cover;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .carousel-item {
+        height: 550px; /* Adjusted height for tablets */
+    }
+}
+    
+@media (max-width: 992px) {
+    .carousel-item {
+        height: 400px; /* Adjusted height for medium screens */
+    }
+    .card-img-top {
+        height: 150px; /* Adjusted height for cards on medium screens */
+    }
+}
+    
+@media (max-width: 768px) {
+    .carousel-item {
+        height: 300px; /* Adjusted height for small screens */
+    }
+    .card-img-top {
+        height: 120px; /* Adjusted height for cards on small screens */
+    }
+}
+    
+@media (max-width: 576px) {
+    .carousel-item {
+        height: 200px; /* Adjusted height for extra small screens */
+    }
+    .card-img-top {
+        height: 100px; /* Adjusted height for cards on extra small screens */
+    }
+}

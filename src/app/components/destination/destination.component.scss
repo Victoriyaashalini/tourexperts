@@ -1,184 +1,74 @@
-.gupter-regular {
-  font-family: "Gupter", serif;
+/* Container for the input and button */
+.typeahead-container {
+  display: flex;
+  align-items: stretch;
+  position: relative;
+}
+
+.typeahead-input {
+  flex: 1;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px; /* Rounded corners only on the left */
+  padding: 10px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  background-color: #fff;
+}
+
+.typeahead-input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Search button styling */
+.search-button {
+  border: 1px solid #ccc;
+  border-left: none; /* Remove border between input and button */
+  border-radius: 0 4px 4px 0; /* Rounded corners only on the right */
+  background-color: #007bff; /* Blue background */
+  color: white;
+  font-size: 1rem;
   font-weight: 500;
-  font-style: normal;
-}
-
-.josefin-sans {
-  font-family: "Josefin Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 200;
-  font-style: italic;
-}
-
-.tourcard .card {
-  border-radius: 5px;
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-  max-width: 100%;
-  margin: auto;
-}
-
-.tourcard .card-img-wrapper {
-  position: relative;
-}
-
-.tourcard .card-img-top {
-  height: 220px;
-  object-fit: cover;
-  border-bottom: 5px solid #f5f5f5;
-  transition: transform 0.5s ease-in-out;
-}
-
-.tourcard .card-img-top:hover {
-  transform: scale(1.1);
-}
-
-.tourcard .days-overlay {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  background: rgba(0, 0, 0, 0.6);
-  color: #fff;
-  font-size: 14px;
-  padding: 8px 12px;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.tourcard .card-body {
-  padding: 15px;
-  background: linear-gradient(135deg, #f9f9f9, #fff);
-}
-
-.tourcard .d-flex {
-  margin-bottom: 10px;
-}
-
-.tourcard .location, .tourcard  {
-  font-size: 13px;
-  font-weight: bold;
-}
-.type{
-font-weight: 400;
-}
-
-.tourcard .location {
-  font-size: 14px;
-  color: #4a4949;
+  padding: 10px 15px;
+  cursor: pointer;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
-.tourcard .location i {
-  font-size: 12px;
-  margin-right: 5px;
-  color: #aeaeae;
+.search-button i {
+  margin: 0; /* Remove any default margin */
 }
 
-.tourcard .card-text {
-  font-size: 18px;
-  color: #333;
-  line-height: 1.2;
-  margin-bottom: 5px;
+/* Hover effect for button */
+.search-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  border-color: #004a8c;
 }
 
-.custom-container {
-  background-color: lightcoral;
-  padding: 40px 0;
-  height: 400px; /* Increased height */
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* Centers content vertically */
+/* Custom scrollbar styles for WebKit browsers */
+.dropdown-menu.show {
+  max-height: 300px;
+  overflow-y: auto;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
-.destination-heading {
-  font-size: 2em;
-  margin-bottom: 20px;
+.dropdown-menu.show::-webkit-scrollbar {
+  width: 6px;
 }
 
-.custom-width {
-  max-width: 100%;
-  padding: 0 15px;
+.dropdown-menu.show::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 3px;
 }
 
-@media (max-width: 767.98px) {
-  .destination-heading {
-    font-size: 1.5em;
-  }
-
-  .custom-width {
-    padding: 0 15px;
-  }
-
-  .custom-container {
-    padding: 20px 0;
-  }
-
-  .tourcard .card-img-top {
-    height: 180px;
-  }
+.dropdown-menu.show::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
 }
 
-.typeheadfilter .input-group {
-  width: 100%;
-}
-
-.typeheadfilter .form-control {
-  height: 60px;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-  font-size: 18px;
-}
-
-.typeheadfilter .input-group-append .btn {
-  height: 60px;
-  background-color: #000080;
-  border: none;
-  color: white;
-  font-size: 18px;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-}
-
-/* Add margin and padding to adjust the layout */
-.container-fluid.custom-container {
-  margin-top: 40px;
-  padding: 20px;
-  height: 400px;
-  text-align: center;
-}
-
-.input-group {
-  width: 100%;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.form-control {
-  height: 60px;
-  font-size: 18px;
-}
-
-.input-group-append .btn {
-  height: 60px;
-  font-size: 18px;
-}
-
-/* Add media query for mobile responsiveness */
-@media (max-width: 767.98px) {
-  .form-control {
-    height: 50px;
-    font-size: 16px;
-  }
-
-  .input-group-append .btn {
-    height: 50px;
-    font-size: 16px;
-  }
-
-  .input-group {
-    max-width: 100%;
-  }
+.dropdown-menu.show::-webkit-scrollbar-track {
+  background: #f1f1f1;
 }

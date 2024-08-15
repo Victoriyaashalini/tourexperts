@@ -21,11 +21,25 @@ import { CommonModule } from '@angular/common';
   ]
 })
 export class HomecarouselComponent {
-  carouselIndex = 0; // Assuming you manage the index in your component logic
+ 
+  destinations: any[] = []; 
+  constructor() { }
 
-  destinations = [
-    { title: 'PARIS', image: '../../../assets/images/pexels-tove-liu-2127454-3867371.jpg' },
-    { title: 'JAPAN', image: '../../../assets/images/pexels-tomas-malik-793526-3408353.jpg' },
-    { title: 'SYDNEY', image: '../../../assets/images/pexels-nathansalt-3386600.jpg' }
-  ];
+  ngOnInit(): void {
+    this.destinations = [
+      {
+        title: 'Zanzibar',
+        video: 'path-to-your-video/zanzibar.mp4' // Replace with the correct path to your video
+      },
+      {
+        title: 'Morocco',
+        video: 'path-to-your-video/morocco.mp4' // Replace with the correct path to your video
+      },
+      {
+        title: 'Madagascar',
+        video: 'path-to-your-video/madagascar.mp4' // Replace with the correct path to your video
+      }
+    ];
+  }
+
 }

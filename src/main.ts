@@ -7,12 +7,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { importProvidersFrom } from '@angular/core';
 import { provideRouter, withComponentInputBinding } from '@angular/router';
 import { routes } from './app/app.routes';
+import { provideHttpClient } from '@angular/common/http';
 
-bootstrapApplication(AppComponent,{
-  providers:[
-    provideRouter(routes, withComponentInputBinding()),
-    importProvidersFrom(BrowserAnimationsModule),
-
+bootstrapApplication(AppComponent, {
+  ...appConfig,
+  providers: [
+    ...appConfig.providers || [], // Include existing providers if any
+    provideHttpClient() // Add HttpClient provider
   ]
 })
-  .catch((err) => console.error(err));
+.catch((err) => console.error(err));

@@ -1,40 +1,30 @@
-<div class="container-fluid custom-container">
-  <div class="row justify-content-center">
-    <div class="col-12 text-center">
-      <h1 class="destination-heading">DESTINATION</h1>
-    </div>
-  </div>
-  <div class="row justify-content-center">
-    <div class="col-12 col-md-10 col-lg-8 custom-width">
-      <app-typeheadfilter (keywordSelected)="onKeywordSelected($event)"></app-typeheadfilter>
-    </div>
+<div class="mb-3 row">
+  <label for="typeahead-prevent-manual-entry" class="col-xs-3 col-sm-auto col-form-label">Search for a tour package:</label>
+  <div class="col">
+    <input
+      id="typeahead-prevent-manual-entry"
+      type="text"
+      class="form-control"
+      [(ngModel)]="model"
+      [ngbTypeahead]="search"
+      [inputFormatter]="formatter"
+      [resultFormatter]="formatter"
+      [editable]="false"
+    />
   </div>
 </div>
+<hr />
 
-<div *ngIf="filteredTours.length">
-  <div class="container tourcard mt-5">
-    <div class="row">
-      <div class="col-lg-3 col-md-6 col-12 mb-4" *ngFor="let tour of filteredTours">
-        <div class="card">
-          <div class="card-img-wrapper">
-            <img [src]="tour.imageUrl" class="card-img-top" alt="{{ tour.name }}">
-            <div class="days-overlay">{{ tour.days }} Days</div>
-          </div>
-          <div class="card-body d-flex flex-column">
-            <div class="d-flex justify-content-between align-items-center">
-              <span class="location raleway">
-                <i class="fa-solid fa-location-dot"></i>{{ tour.location }}
-              </span>
-              <span class="type josefin-sans">{{ tour.type }}</span>
-            </div>
-            <p class="card-text mt-2 gupter-regular">{{ tour.description }}</p>
-          </div>
-        </div>
+<!-- Display packages as cards or list items -->
+<div class="row">
+  <div class="col-md-4" *ngFor="let pkg of filteredPackages">
+    <div class="card">
+      <img src="{{ pkg.imageUrl }}" class="card-img-top" alt="{{ pkg.packagename }}">
+      <div class="card-body">
+        <h5 class="card-title">{{ pkg.packagename }}</h5>
+        <p class="card-text">{{ pkg.description }}</p>
+        <p class="card-text"><small class="text-muted">{{ pkg.location }}, {{ pkg.country }}</small></p>
       </div>
     </div>
   </div>
-</div>
-
-<div *ngIf="!filteredTours.length">
-  <p>No tours found.</p>
 </div>
