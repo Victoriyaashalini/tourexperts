@@ -37,7 +37,6 @@ export class DestinationComponent {
       distinctUntilChanged(),
       map(term => term.length < 2 ? [] : this.filterUniqueLocations(term))
     );
-   
 
   filterUniqueLocations(term: string): { location: string; country: string }[] {
     const regex = new RegExp(`^${term}`, 'i'); // Match from the start of the string
@@ -63,11 +62,10 @@ export class DestinationComponent {
       return this.tourPackages;
     }
 
-    return this.tourPackages.filter(pkg => 
+    return this.tourPackages.filter(pkg =>
       pkg.location === this.model!.location && pkg.country === this.model!.country
     );
   }
-  
   }
  
 

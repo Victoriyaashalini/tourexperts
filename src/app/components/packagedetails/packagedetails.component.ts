@@ -13,16 +13,27 @@ import { CommonModule } from '@angular/common';
   styleUrl: './packagedetails.component.scss'
 })
 export class PackagedetailsComponent implements OnInit {
-  packageDetails: TourPackage | undefined;
+  packageDetails!: TourPackage;
 
-  constructor(private route: ActivatedRoute, private tourPackageService: DestinationserviceService) {}
+  constructor(private route: ActivatedRoute, private tourPackageService: DestinationserviceService) { }
 
   ngOnInit(): void {
-    const location = this.route.snapshot.paramMap.get('location')!;
-    const country = this.route.snapshot.paramMap.get('country')!;
+    this.route.params.subscribe(params => {
+      const packageId = +params['id']; // Extract the package ID from the route parameters
+      this.fetchPackageDetails(packageId);
+    });
+  }
 
-    this.tourPackageService.getTourPackages().subscribe(packages => {
-      this.packageDetails = packages.find(pkg => pkg.location === location && pkg.country === country);
+  fetchPackageDetails(id: number): void {
+    this.tourPackageService.getTourPackageById(id).subscribe(pkg => {
+      if (pkg) {
+        this.packageDetails = pkg;
+        console.log('Package Details:', this.packageDetails); // Debugging
+      } else {
+        console.error('Package not found with id:', id); // Debugging
+      }
+    }, error => {
+      console.error('Error fetching package details:', error); // Debugging
     });
   }
 }

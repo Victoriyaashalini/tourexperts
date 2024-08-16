@@ -25,16 +25,15 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-4" *ngFor="let pkg of filteredPackages">
-      <a [routerLink]="['/package-details', pkg.id]" class="card-link">
-        <div class="card">
-          <img src="{{ pkg.imageUrl }}" class="card-img-top" alt="{{ pkg.packagename }}">
-          <div class="card-body">
-            <h5 class="card-title">{{ pkg.packagename }}</h5>
-            <p class="card-text">{{ pkg.description }}</p>
-            <p class="card-text"><small class="text-muted">{{ pkg.location }}, {{ pkg.country }}</small></p>
-          </div>
+      <div class="card" [routerLink]="['/package', pkg.id]">
+        <img src="{{ pkg.imageUrl }}" class="card-img-top" alt="{{ pkg.packagename }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ pkg.packagename }}</h5>
+          <p class="card-text">{{ pkg.description }}</p>
+          <p class="card-text"><small class="text-muted">{{ pkg.location }}, {{ pkg.country }}</small></p>
         </div>
-      </a>
+      </div>
     </div>
   </div>
 </div>
+

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs';
 
 export interface TourPackage {
   id: number;
@@ -23,7 +24,6 @@ export interface TourPackage {
 })
 export class DestinationserviceService {
  
-
   private dataUrl = '../../assets/tourpackage.json';
 
   constructor(private http: HttpClient) {}
@@ -31,7 +31,10 @@ export class DestinationserviceService {
   getTourPackages(): Observable<TourPackage[]> {
     return this.http.get<TourPackage[]>(this.dataUrl);
   }
-  getPackageById(id: string): Observable<TourPackage> {
-    return this.http.get<TourPackage>(`${this.dataUrl}/${id}`);
+
+  getTourPackageById(id: number): Observable<TourPackage | undefined> {
+    return this.getTourPackages().pipe(
+      map((packages: TourPackage[]) => packages.find((pkg: TourPackage) => pkg.id === id))
+    );
   }
 }
