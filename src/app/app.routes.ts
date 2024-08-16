@@ -14,11 +14,14 @@ import { FamilytourComponent } from './secondorycomponent/familytour/familytour.
 import { GrouptourComponent } from './secondorycomponent/grouptour/grouptour.component';
 import { PopulartoursComponent } from './components/populartours/populartours.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { PackagedetailsComponent } from './components/packagedetails/packagedetails.component';
 
 export const routes: Routes = [
 	{path:'',title:'home',component:HomeComponent},
 	{path:'about',title:'about',component:AboutComponent},
 	{path:'destination',title:'destinationSearch',component:DestinationComponent},
+	{ path: 'destination/:location/:country', component:PackagedetailsComponent},
+	{ path: '', redirectTo: '/destination', pathMatch: 'full' },
 	{path:'package',title:'package',component:PackagesComponent},
 	
 			{path:'asia',title:'package|asia',component:AsiaComponent},

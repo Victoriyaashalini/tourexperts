@@ -1,12 +1,50 @@
 /* Container for the input and button */
+/* Center the search box container */
+.container-fluid {
+  padding: 0 15px; /* Adjust padding as needed */
+}
+
+/* Center the input box and ensure it takes full width */
+.custom-typeahead {
+  width: 100%;
+  max-width: 1000px; /* Adjust this value to increase the width */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  background-color: #fff;
+}
+
+.custom-typeahead:focus {
+  border-color: #838383;
+  outline: none;
+}
+
+/* Adjust styles for the dropdown */
+.dropdown-menu.show {
+  max-height: 300px;
+  overflow-y: auto;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+
 .typeahead-container {
   display: flex;
   align-items: stretch;
   position: relative;
+  width: 100%; /* Ensure the container takes full width of its parent */
 }
 
-.typeahead-input {
-  flex: 1;
+/* Increase the width of the search box */
+.custom-search-box,
+.custom-typeahead {
+  width: 100%; /* Make the input box take full width of the container */
+  max-width: 500px; /* Adjust maximum width as needed */
   border: 1px solid #ccc;
   border-radius: 4px 0 0 4px; /* Rounded corners only on the left */
   padding: 10px;
@@ -15,7 +53,7 @@
   background-color: #fff;
 }
 
-.typeahead-input:focus {
+.custom-typeahead:focus {
   border-color: #007bff;
   outline: none;
 }
@@ -42,7 +80,7 @@
 
 /* Hover effect for button */
 .search-button:hover {
-  background-color: #0056b3; /* Darker blue on hover */
+  background-color: #ddddde; /* Darker blue on hover */
   border-color: #004a8c;
 }
 
@@ -54,6 +92,8 @@
   border: 1px solid #ddd;
   background: #fff;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  width: 100%; /* Make dropdown width match the input width */
+  max-width: 500px; /* Adjust maximum width as needed */
 }
 
 .dropdown-menu.show::-webkit-scrollbar {
@@ -71,4 +111,67 @@
 
 .dropdown-menu.show::-webkit-scrollbar-track {
   background: #f1f1f1;
+}
+
+/* Custom styles for dropdown items */
+.custom-typeahead .dropdown-item {
+  background-color: #f8f9fa; /* Light white background color */
+  color: #212529; /* Default text color */
+}
+
+.custom-typeahead .dropdown-item.active,
+.custom-typeahead .dropdown-item:hover {
+  background-color: #e2e6ea; /* Slightly darker white for hover/active state */
+  color: #000; /* Dark text color for better contrast */
+}
+
+/* Increase the width of each suggestion item */
+::ng-deep .dropdown-menu.show .dropdown-item {
+  width: 100%; /* Make each item take up the full width of the dropdown */
+  white-space: nowrap; /* Prevent text wrapping */
+}
+/* Styles for the custom typeahead */
+::ng-deep .dropdown-menu.show .dropdown-item {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+}
+
+/* Style for the location icon */
+::ng-deep .dropdown-menu.show .dropdown-item i {
+  margin-right: 8px; /* Add space between icon and text */
+  color: #007bff; /* Color for the location icon */
+}
+
+/* Highlight color for location text */
+.highlight-location {
+  color: #007bff; /* Blue color for location */
+}
+
+/* Highlight color for country text */
+.highlight-location {
+  font-weight: bold;
+  color: #2fbfd2; /* Example highlight color */
+}
+
+.highlight-country {
+  font-style: italic;
+  color: #6c757d; /* Example highlight color */
+}
+
+.card-link {
+  text-decoration: none; /* Remove underline from link */
+  color: inherit; /* Inherit color from parent element */
+}
+
+.card-link:hover {
+  text-decoration: none; /* Ensure no underline on hover */
+}
+
+.card {
+  transition: box-shadow 0.3s ease; /* Smooth shadow transition */
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
 }

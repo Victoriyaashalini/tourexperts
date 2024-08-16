@@ -1,30 +1,40 @@
-<div class="mb-3 row">
-  <label for="typeahead-prevent-manual-entry" class="col-xs-3 col-sm-auto col-form-label">Search for a tour package:</label>
-  <div class="col">
-    <input
-      id="typeahead-prevent-manual-entry"
-      type="text"
-      class="form-control"
-      [(ngModel)]="model"
-      [ngbTypeahead]="search"
-      [inputFormatter]="formatter"
-      [resultFormatter]="formatter"
-      [editable]="false"
-    />
+<!-- Search Input -->
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+      <div class="mb-3">
+        <label for="typeahead-prevent-manual-entry" class="form-label">Search for a tour package:</label>
+        <input
+          id="typeahead-prevent-manual-entry"
+          type="text"
+          class="form-control custom-typeahead"
+          [(ngModel)]="model"
+          [ngbTypeahead]="search"
+          [inputFormatter]="formatter"
+          [resultFormatter]="formatter"
+          [editable]="false"
+        />
+      </div>
+    </div>
   </div>
 </div>
+
 <hr />
 
 <!-- Display packages as cards or list items -->
-<div class="row">
-  <div class="col-md-4" *ngFor="let pkg of filteredPackages">
-    <div class="card">
-      <img src="{{ pkg.imageUrl }}" class="card-img-top" alt="{{ pkg.packagename }}">
-      <div class="card-body">
-        <h5 class="card-title">{{ pkg.packagename }}</h5>
-        <p class="card-text">{{ pkg.description }}</p>
-        <p class="card-text"><small class="text-muted">{{ pkg.location }}, {{ pkg.country }}</small></p>
-      </div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4" *ngFor="let pkg of filteredPackages">
+      <a [routerLink]="['/package-details', pkg.id]" class="card-link">
+        <div class="card">
+          <img src="{{ pkg.imageUrl }}" class="card-img-top" alt="{{ pkg.packagename }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ pkg.packagename }}</h5>
+            <p class="card-text">{{ pkg.description }}</p>
+            <p class="card-text"><small class="text-muted">{{ pkg.location }}, {{ pkg.country }}</small></p>
+          </div>
+        </div>
+      </a>
     </div>
   </div>
 </div>

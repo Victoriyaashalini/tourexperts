@@ -1,0 +1,24 @@
+.package-details {
+	position: relative;
+	background-size: cover;
+	background-position: center;
+	height: 100vh; /* Adjust as needed */
+	color: white; /* Ensure text is readable */
+	padding: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  
+	.overlay {
+	  background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay for better text readability */
+	  padding: 20px;
+	  border-radius: 10px;
+	  text-align: center;
+	}
+  
+	.welcome-message {
+	  font-size: 1.5rem;
+	  font-weight: bold;
+	}
+  }
+  

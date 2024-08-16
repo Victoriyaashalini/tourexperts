@@ -8,12 +8,14 @@ import { importProvidersFrom } from '@angular/core';
 import { provideRouter, withComponentInputBinding } from '@angular/router';
 import { routes } from './app/app.routes';
 import { provideHttpClient } from '@angular/common/http';
+import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 
 bootstrapApplication(AppComponent, {
-  ...appConfig,
   providers: [
-    ...appConfig.providers || [], // Include existing providers if any
-    provideHttpClient() // Add HttpClient provider
+    provideHttpClient(),
+    provideRouter(routes),
+    importProvidersFrom(BrowserModule, BrowserAnimationsModule),
   ]
 })
 .catch((err) => console.error(err));

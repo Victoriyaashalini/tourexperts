@@ -12,6 +12,10 @@ export interface TourPackage {
   imageUrl: string;
   location: string;
   country: string;
+  price?: number;         // Make sure to include these properties if needed
+  duration?: number;
+  includes?: string;
+  excludes?: string;
 }
 
 @Injectable({
@@ -26,5 +30,8 @@ export class DestinationserviceService {
 
   getTourPackages(): Observable<TourPackage[]> {
     return this.http.get<TourPackage[]>(this.dataUrl);
+  }
+  getPackageById(id: string): Observable<TourPackage> {
+    return this.http.get<TourPackage>(`${this.dataUrl}/${id}`);
   }
 }
