@@ -3,17 +3,20 @@ import {  OnInit } from '@angular/core';
 import { ActivatedRoute, RouterModule, RouterOutlet } from '@angular/router';
 import { DestinationserviceService,TourPackage } from '../../services/destinationservice.service';
 import { CommonModule } from '@angular/common';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
   selector: 'app-packagedetails',
   standalone: true,
-  imports: [CommonModule,RouterOutlet,RouterModule],
+  imports: [CommonModule,RouterOutlet,RouterModule,FontAwesomeModule],
   templateUrl: './packagedetails.component.html',
   styleUrl: './packagedetails.component.scss'
 })
 export class PackagedetailsComponent implements OnInit {
   packageDetails!: TourPackage;
+  faMapMarkerAlt = faMapMarkerAlt;
 
   constructor(private route: ActivatedRoute, private tourPackageService: DestinationserviceService) { }
 

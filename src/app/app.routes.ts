@@ -17,24 +17,24 @@ import { ContactComponent } from './components/contact/contact.component';
 import { PackagedetailsComponent } from './components/packagedetails/packagedetails.component';
 
 export const routes: Routes = [
-	{path:'',title:'home',component:HomeComponent},
-	{path:'about',title:'about',component:AboutComponent},
-	{path:'destination',title:'destinationSearch',component:DestinationComponent},
-	{ path: 'package/:id', component:PackagedetailsComponent},
+	{path:'',title:'home',component:HomeComponent, data: { breadcrumb: 'Home' }},
+	{path:'about',title:'about',component:AboutComponent,data: { breadcrumb: 'About' }},
+	{path:'destination',title:'destinationSearch',component:DestinationComponent,data: { breadcrumb: 'Destination' } },
+	{ path: 'package/:id', component:PackagedetailsComponent,data: { breadcrumb: 'Destination Search' } },
 	{ path: '', redirectTo: '/destination', pathMatch: 'full' },
-	{path:'package',title:'package',component:PackagesComponent},
+	{path:'package',title:'package',component:PackagesComponent,data: { breadcrumb: 'Packages' } },
 	
-			{path:'asia',title:'package|asia',component:AsiaComponent},
-			{path:'indiapackage',component:IndiaComponent},
-			{path:'internationalpakage',component:InternationalComponent},
-			{path:'honeymoonPackage',component:HoneymoonComponent},
-			{path:'islandPackage',component:IslandComponent},
-			{path:'weddingPackage',component:WeddingComponent},
-			{path:'familytourPackage',component:FamilytourComponent},
-			{path:'grouptour',component:GrouptourComponent},
+			{path:'asia',title:'package|asia',component:AsiaComponent,data: { breadcrumb: 'Asia Packages' } },
+			{path:'indiapackage',component:IndiaComponent,data: { breadcrumb: 'India Packages' } },
+			{path:'internationalpakage',component:InternationalComponent,data: { breadcrumb: 'International Packages' } },
+			{path:'honeymoonPackage',component:HoneymoonComponent,data: { breadcrumb: 'Honeymoon packages' } },
+			{path:'islandPackage',component:IslandComponent,data: { breadcrumb: 'Island Packages' } },
+			{path:'weddingPackage',component:WeddingComponent,data: { breadcrumb: 'Wedding packages' } },
+			{path:'familytourPackage',component:FamilytourComponent,data: { breadcrumb: 'familytour Packages' } },
+			{path:'grouptour',component:GrouptourComponent,data: { breadcrumb: 'Group tour Packages' } },
 	
-	{ path: 'populartour', component: PopulartoursComponent },
-	{ path: 'contact', component:ContactComponent },
+	{ path: 'populartour', component: PopulartoursComponent,data: { breadcrumb: 'Popular tours' }  },
+	{ path: 'contact', component:ContactComponent,data: { breadcrumb: 'Contact' }  },
 ];
 @NgModule({
 	imports: [RouterModule.forRoot(routes)],

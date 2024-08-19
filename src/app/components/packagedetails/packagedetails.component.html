@@ -2,19 +2,89 @@
 	<a routerLink="/destination" class="btn btn-secondary mb-3">Back to Destination</a>
 	<div *ngIf="packageDetails">
 	  <div class="row">
-		<div class="col-md-6">
-		  <img [src]="packageDetails.imageUrl" class="img-fluid" alt="{{ packageDetails.packagename }}">
+		<div class="col-md-8">
+		  <!-- Image Carousel with package name, location, and country -->
+		  <div class="carousel-container">
+			<h2>{{ packageDetails.packagename }}</h2>
+			<p>
+			  <fa-icon [icon]="faMapMarkerAlt"></fa-icon>
+			  {{ packageDetails.location }}, {{ packageDetails.country }}
+			</p>
+			<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+			  <div class="carousel-inner">
+				<div class="carousel-item active">
+				  <div class="carousel-caption animated fadeIn">
+					<h3>{{ packageDetails.packagename }}</h3>
+					<p>
+					  <fa-icon [icon]="faMapMarkerAlt"></fa-icon>
+					  {{ packageDetails.location }}, {{ packageDetails.country }}
+					</p>
+				  </div>
+				  <img [src]="packageDetails.imageUrl" class="d-block w-100" alt="{{ packageDetails.packagename }}">
+				</div>
+				<div class="carousel-item" *ngFor="let image of packageDetails.additionalImages; let i = index">
+				  <div class="carousel-caption animated fadeIn">
+					<h3>Image {{ i + 1 }}</h3>
+					<p>
+					  <fa-icon [icon]="faMapMarkerAlt"></fa-icon>
+					  {{ packageDetails.location }}, {{ packageDetails.country }}
+					</p>
+				  </div>
+				  <img [src]="image" class="d-block w-100" alt="{{ packageDetails.packagename }}">
+				</div>
+			  </div>
+			  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Previous</span>
+			  </a>
+			  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Next</span>
+			  </a>
+			</div>
+		  </div>
 		</div>
-		<div class="col-md-6">
-		  <h2>{{ packageDetails.packagename }}</h2>
-		  <p class="lead">{{ packageDetails.description }}</p>
+		<div class="col-md-4">
+		  <div class="package-info">
+			<h2>Book Now</h2>
+			<form>
+			  <div class="mb-3">
+				<label for="name" class="form-label">Name</label>
+				<input type="text" class="form-control" id="name" placeholder="Enter your name">
+			  </div>
+			  <div class="mb-3">
+				<label for="email" class="form-label">Email</label>
+				<input type="email" class="form-control" id="email" placeholder="Enter your email">
+			  </div>
+			  <div class="mb-3">
+				<label for="phone" class="form-label">Phone</label>
+				<input type="tel" class="form-control" id="phone" placeholder="Enter your phone number">
+			  </div>
+			  <button type="submit" class="btn btn-primary">Submit</button>
+			</form>
+		  </div>
+		</div>
+	  </div>
+	  <div class="row mt-4">
+		<div class="col-12">
+		  <h3>Tour Details</h3>
 		  <p><strong>Location:</strong> {{ packageDetails.location }}</p>
 		  <p><strong>Country:</strong> {{ packageDetails.country }}</p>
-		  <p><strong>Price:</strong> {{ packageDetails.price | currency }}</p>
+		  <p><strong>Price:</strong> {{ packageDetails.price  }}</p>
 		  <p><strong>Duration:</strong> {{ packageDetails.duration }} days</p>
 		  <p><strong>Includes:</strong> {{ packageDetails.includes }}</p>
 		  <p><strong>Excludes:</strong> {{ packageDetails.excludes }}</p>
-		  <a [routerLink]="['/booking', packageDetails.id]" class="btn btn-primary mt-3">Book Now</a>
+		</div>
+	  </div>
+	  <div class="row mt-4">
+		<div class="col-12">
+		  <h3>Travel Itinerary</h3>
+		  <div *ngFor="let itinerary of packageDetails.itinerary" class="card mb-3">
+			<div class="card-header">{{ itinerary.day }}</div>
+			<div class="card-body">
+			  <p class="card-text">{{ itinerary.description }}</p>
+			</div>
+		  </div>
 		</div>
 	  </div>
 	</div>

@@ -86,6 +86,31 @@ const locations = {
   'Lebanon': ['Beirut', 'Tripoli', 'Byblos', 'Sidon', 'Baalbek'],
   // Add more countries and cities here
 };
+const descriptors = {
+  'USA': ['Vibrant', 'Classic', 'Urban', 'Dynamic'],
+  'France': ['Elegant', 'Charming', 'Historic', 'Romantic'],
+  'Japan': ['Serene', 'Traditional', 'Modern', 'Cultural'],
+  'Australia': ['Sun-kissed', 'Outback', 'Coastal', 'Unique'],
+  'Italy': ['Scenic', 'Artistic', 'Historic', 'Gourmet'],
+  'Spain': ['Festive', 'Sunny', 'Cultural', 'Exotic'],
+  'Germany': ['Historic', 'Modern', 'Festive', 'Scenic'],
+  'Brazil': ['Lively', 'Tropical', 'Cultural', 'Adventurous'],
+  'South Africa': ['Wild', 'Scenic', 'Diverse', 'Vibrant'],
+  'India': ['Exotic', 'Colorful', 'Historic', 'Spiritual'],
+  'China': ['Ancient', 'Modern', 'Vibrant', 'Cultural'],
+  'Mexico': ['Colorful', 'Cultural', 'Historic', 'Relaxing'],
+  'Canada': ['Majestic', 'Scenic', 'Vibrant', 'Adventurous'],
+  'Turkey': ['Historic', 'Cultural', 'Scenic', 'Unique'],
+  'Greece': ['Ancient', 'Sunny', 'Cultural', 'Relaxing'],
+  'Thailand': ['Tropical', 'Cultural', 'Relaxing', 'Adventure'],
+  'Portugal': ['Sunny', 'Historic', 'Cultural', 'Charming'],
+  'Netherlands': ['Historic', 'Modern', 'Unique', 'Scenic'],
+  'Switzerland': ['Scenic', 'Mountainous', 'Peaceful', 'Charming'],
+  'Belgium': ['Historic', 'Charming', 'Cultural', 'Delicious'],
+  'Egypt': ['Ancient', 'Mystical', 'Historic', 'Relaxing'],
+  'United Arab Emirates': ['Luxurious', 'Modern', 'Vibrant', 'Unique']
+};
+
 
 // Function to get a random location
 const getRandomLocation = () => {
@@ -94,10 +119,8 @@ const getRandomLocation = () => {
   const regionsOrCities = locations[country];
 
   if (Array.isArray(regionsOrCities)) {
-    // Return a random city if it's an array
     return { location: regionsOrCities[Math.floor(Math.random() * regionsOrCities.length)], country };
   } else {
-    // Pick a random region and then a city from that region
     const regions = Object.keys(regionsOrCities);
     const region = regions[Math.floor(Math.random() * regions.length)];
     const cities = regionsOrCities[region];
@@ -107,25 +130,62 @@ const getRandomLocation = () => {
 
 // Function to generate random tour packages
 const generateTourPackages = (num) => {
-  const types = ['Adventure', 'India', 'International', 'Asia', 'Family tour', 'Group Tour', 'Honeymoon', 'Solo', 'Friends trip', 'Wedding', 'Luxury Resort', 'North India', 'East India', 'South India', 'West India'];
+  const types = ['Adventure', 'Relaxation', 'Family tour', 'Group Tour', 'Honeymoon', 'Solo', 'Luxury Resort', 'North India', 'East India', 'South India', 'West India'];
   const keywords = ['beach', 'mountain', 'city', 'sea', 'paradise', 'adventure', 'romantic', 'fun'];
+  const includedItems = ["Flight, Hotel, Meals", "Hotel, Sightseeing, Meals", "Transportation, Hotel, Tour Guide"];
+  const excludedItems = ["Personal expenses", "Visa fees", "Travel insurance"];
+  const languages = ["English", "Spanish", "French", "German", "Japanese"];
+  const currencies = ["Dollar", "Euro", "Pound", "Rupee", "Yen"];
 
   const tours = [];
   for (let i = 1; i <= num; i++) {
     const randomType = types[Math.floor(Math.random() * types.length)];
     const randomKeywords = keywords.sort(() => 0.5 - Math.random()).slice(0, 2);
-    const locationData = getRandomLocation(); // Get a random location
+    const locationData = getRandomLocation();
+    const randomDays = Math.floor(Math.random() * 10) + 1;
+    const randomSize = Math.random() > 0.5 ? 'Unlimited' : Math.floor(Math.random() * 50) + 10;
+    const randomIncludes = includedItems[Math.floor(Math.random() * includedItems.length)];
+    const randomExcludes = excludedItems[Math.floor(Math.random() * excludedItems.length)];
+    const randomLanguage = languages[Math.floor(Math.random() * languages.length)];
+    const randomCurrency = currencies[Math.floor(Math.random() * currencies.length)];
+
+    // Select a random descriptor for the package name
+    const descriptorsList = descriptors[locationData.country] || [];
+    const randomDescriptor = descriptorsList[Math.floor(Math.random() * descriptorsList.length)] || 'Amazing';
+
+    // Dynamic description generation with random descriptor
+    const description = `Experience a ${randomDescriptor} adventure in the city of ${locationData.location}, ${locationData.country}. This ${randomType} package offers ${randomDays} days of unforgettable experiences, perfect for those seeking ${randomKeywords.join(' and ')}.`;
+
+    // Generate a random price between a range (e.g., 500 - 5000)
+    const price = Math.floor(Math.random() * 4501) + 500; // Random price between 500 and 5000
 
     tours.push({
       id: i,
-      name: `Tour Package ${i}`,
-      days: Math.floor(Math.random() * 10) + 1,
-      type: randomType,
+      packagename: `${randomDescriptor} Tour Package ${i}`, // Updated package name with descriptor
+      tourtype: randomType,
       keywords: randomKeywords,
-      description: `Description for Tour Package ${i}.`,
+      description: description, // Updated description
       imageUrl: `assets/images/tour-package-${i}.jpg`,
-      location: locationData.location, // City or location within the country
-      country: locationData.country // Country name
+      location: locationData.location,
+      country: locationData.country,
+      duration: randomDays,
+      GroupSize: randomSize,
+      includes: randomIncludes,
+      excludes: randomExcludes,
+      Languages: randomLanguage,
+      currency: randomCurrency,
+      citiesCovered: ["Mexico", "Italy", "Japan"].join(', '),
+      additionalImages: [
+        `assets/images/additional-image-${i}-1.jpg`,
+        `assets/images/additional-image-${i}-2.jpg`,
+        `assets/images/additional-image-${i}-3.jpg`
+      ],
+      itinerary: [
+        { day: "Day 1", description: "Arrival and check-in at the hotel." },
+        { day: "Day 2", description: "City tour and sightseeing." },
+        { day: "Day 3", description: "Leisure day or optional activities." }
+      ],
+      price: `Starts from ${price} ${randomCurrency}` // New field for price
     });
   }
 

@@ -5,10 +5,11 @@ import { HttpClient } from '@angular/common/http';
 import { catchError, tap } from 'rxjs/operators';
 import { FormsModule } from '@angular/forms';
 import { ContactformComponent } from '../../secondorycomponent/contactform/contactform.component';
+import { BreadcrumbComponent } from '../../breadcrumb/breadcrumb.component';
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [RouterLink,FormsModule,ContactformComponent],
+  imports: [RouterLink,FormsModule,ContactformComponent,BreadcrumbComponent],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })

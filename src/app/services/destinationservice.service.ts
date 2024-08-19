@@ -6,25 +6,24 @@ import { map } from 'rxjs';
 export interface TourPackage {
   id: number;
   packagename: string;
-  days: number;
-  type: string;
-  keywords: string[];
   description: string;
-  imageUrl: string;
+  tourtype:string;
   location: string;
   country: string;
-  price?: number;         // Make sure to include these properties if needed
-  duration?: number;
-  includes?: string;
-  excludes?: string;
+  price: string; // Updated to string to include both price and currency
+  duration: string; // Updated to string to include both days and nights
+  includes: string;
+  excludes: string;
+  imageUrl: string;
+  additionalImages: string[];
+  itinerary: { day: string, description: string }[];
 }
-
 @Injectable({
   providedIn: 'root'
 })
 export class DestinationserviceService {
  
-  private dataUrl = '../../assets/tourpackage.json';
+  private dataUrl = '../../assets/tour-packages.json';
 
   constructor(private http: HttpClient) {}
 

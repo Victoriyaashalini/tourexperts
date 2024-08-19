@@ -8,10 +8,11 @@ import { FormsModule } from '@angular/forms';
 import { NgbCarouselModule, NgbTypeaheadModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
 import { FooterComponent } from './components/footer/footer.component';
+import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NavbarComponent,CommonModule,RouterModule,HttpClientModule,FormsModule,NgbTypeaheadModule,FooterComponent,NgbCarouselModule],
+  imports: [RouterOutlet, NavbarComponent,CommonModule,RouterModule,HttpClientModule,FormsModule,NgbTypeaheadModule,FooterComponent,NgbCarouselModule,BreadcrumbComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

@@ -1,24 +1,188 @@
-.package-details {
-	position: relative;
-	background-size: cover;
-	background-position: center;
-	height: 100vh; /* Adjust as needed */
-	color: white; /* Ensure text is readable */
-	padding: 20px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+.container {
+	margin-top: 20px;
+  }
   
-	.overlay {
-	  background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay for better text readability */
-	  padding: 20px;
-	  border-radius: 10px;
-	  text-align: center;
+  .btn-secondary {
+	margin-bottom: 20px;
+  }
+  
+  .carousel-container {
+	margin-bottom: 20px;
+  
+	h2 {
+	  margin-bottom: 10px;
+	  font-size: 24px;
+	  font-weight: bold;
 	}
   
-	.welcome-message {
-	  font-size: 1.5rem;
-	  font-weight: bold;
+	p {
+	  margin-bottom: 20px;
+	  font-size: 18px;
+	  color: #666;
+  
+	  fa-icon {
+		margin-right: 5px;
+		color: #007bff;
+	  }
 	}
   }
   
+  .carousel {
+	width: 100%;
+  }
+  
+  .carousel-inner {
+	height: 500px; /* Adjust the height as needed */
+  
+	.carousel-item {
+	  height: 100%;
+  
+	  img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		border-radius: 10px;
+	  }
+  
+	  .carousel-caption {
+		position: absolute;
+		top: 10px;
+		left: 0;
+		width: 100%;
+		color: white;
+		text-align: center;
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add text shadow for better readability */
+		padding: 10px;
+		border-radius: 10px;
+		background: transparent; /* Remove background color */
+  
+		h3 {
+		  font-size: 20px;
+		  font-weight: bold;
+		  margin: 0;
+		  animation: fadeInOut 3s ease-in-out;
+		}
+  
+		p {
+		  font-size: 16px;
+		  margin: 0;
+		  animation: fadeInOut 3s ease-in-out;
+  
+		  fa-icon {
+			margin-right: 5px;
+			color: #007bff;
+		  }
+		}
+	  }
+	}
+  }
+  
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+	filter: invert(1);
+  }
+  
+  .package-info {
+	margin-top: 40px; /* Move the package info down a bit */
+  
+	h2 {
+	  font-size: 24px;
+	  margin-bottom: 20px;
+	}
+  
+	.lead {
+	  font-size: 16px;
+	  margin-bottom: 20px;
+	  color: #666;
+	}
+  
+	strong {
+	  display: block;
+	  margin-bottom: 5px;
+	}
+  
+	.btn-primary {
+	  margin-top: 20px;
+	}
+  }
+  
+  .card {
+	margin-bottom: 20px;
+  }
+  
+  .card-header {
+	background-color: #007bff;
+	color: white;
+	font-weight: bold;
+	font-size: 18px;
+  }
+  
+  .card-body {
+	font-size: 14px;
+	color: #333;
+  
+	.card-text {
+	  margin-bottom: 10px;
+	}
+  }
+  
+  .card-title {
+	font-size: 20px;
+	margin-bottom: 10px;
+	font-weight: bold;
+  }
+  
+  .card-text {
+	font-size: 14px;
+	color: #555;
+  }
+  
+  .mt-3 {
+	margin-top: 1rem;
+  }
+  
+  h3 {
+	margin-top: 40px;
+	margin-bottom: 20px;
+	font-size: 24px;
+	font-weight: bold;
+  }
+  
+  @media (max-width: 768px) {
+	.carousel-container {
+	  h2 {
+		font-size: 20px;
+	  }
+  
+	  p {
+		font-size: 16px;
+	  }
+	}
+  
+	h2 {
+	  font-size: 24px;
+	}
+  
+	.lead {
+	  font-size: 14px;
+	}
+  
+	.card-header {
+	  font-size: 16px;
+	}
+  }
+  
+  @keyframes fadeInOut {
+	0% {
+	  opacity: 0;
+	}
+	10% {
+	  opacity: 1;
+	}
+	90% {
+	  opacity: 1;
+	}
+	100% {
+	  opacity: 0;
+	}
+  }
