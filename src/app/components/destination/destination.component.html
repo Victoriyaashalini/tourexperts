@@ -1,28 +1,42 @@
-<!-- Search Input -->
-<div class="container-fluid">
-  <div class="row justify-content-center">
-    <div class="col-md-8 col-lg-6">
-      <div class="mb-3">
-        <label for="typeahead-prevent-manual-entry" class="form-label">Search for a tour package:</label>
-        <input
-          id="typeahead-prevent-manual-entry"
-          type="text"
-          class="form-control custom-typeahead"
-          [(ngModel)]="model"
-          [ngbTypeahead]="search"
-          [inputFormatter]="formatter"
-          [resultFormatter]="formatter"
-          [editable]="false"
-        />
-      </div>
-    </div>
+<div class="container-fluid search-container">
+  <div class="text-container">
+    <p class="hello-text moderustic">Hello</p>
+    <p class="subtext sedan-regular mb-3">Every city has a story waiting to be explored. Where will your next adventure take you?</p>
+  </div>
+
+  <div class="input-group mb-3">
+    <!-- Search Icon -->
+    <span class="input-group-text">
+      <i class="bi bi-search"></i>
+    </span>
+    
+    <!-- Search Input -->
+    <input
+      id="typeahead-prevent-manual-entry"
+      type="text"
+      class="form-control custom-typeahead"
+      placeholder="Search the world's best photos and images"
+      [(ngModel)]="model"
+      [ngbTypeahead]="search"
+      [inputFormatter]="formatter"
+      [resultFormatter]="formatter"
+      [editable]="false"
+    />
+    
+    <!-- Clear Button (X) -->
+    <button *ngIf="model" type="button" class="btn btn-light">
+      <i class="bi bi-x"></i>
+    </button>
+    
+    <!-- Dropdown Button -->
+    <button class="btn btn-light dropdown-toggle" type="button">
+      Images
+    </button>
   </div>
 </div>
 
-<hr />
-
 <!-- Display packages as cards -->
-<div class="container">
+<div class="container mt-5">
   <div class="row">
     <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" *ngFor="let pkg of filteredPackages">
       <div class="card" [routerLink]="['/package', pkg.id]">

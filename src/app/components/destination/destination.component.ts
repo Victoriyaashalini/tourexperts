@@ -66,6 +66,7 @@ export class DestinationComponent {
       pkg.location === this.model!.location && pkg.country === this.model!.country
     );
   }
+
   }
  
 

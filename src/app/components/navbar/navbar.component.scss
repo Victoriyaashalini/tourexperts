@@ -8,15 +8,27 @@
     font-weight: 500;
     font-style: normal;
   }
+  .eb-garamond {
+    font-family: "EB Garamond", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+  }
+  .spectral-regular {
+    font-family: "Spectral", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
 .navbar-nav .nav-link, 
 .navbar-nav .dropdown-item, 
 .contact-button {
     cursor: pointer;
 }
 .nav-link {
-    font-size: clamp(16px, 2vw, 18px);
-    color: #08154b;
-    font-family: "Merriweather", serif;
+    font-size: clamp(16px, 2vw, 20px);
+    color: #0a0a0b;
+    font-family: "Spectral", serif;
+    font-weight: 600;
 
 }
 
