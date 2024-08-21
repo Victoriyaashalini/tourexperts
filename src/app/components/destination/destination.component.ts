@@ -19,41 +19,49 @@ import { RouterLink } from '@angular/router';
 export class DestinationComponent {
   model: { location: string; country: string } | undefined;
   tourPackages: TourPackage[] = [];
-  searchTerm: string = '';
+  searchMode: string = 'Packages'; // Default to Packages
 
   constructor(private tourPackageService: DestinationserviceService) {}
 
   ngOnInit(): void {
-    this.tourPackageService.getTourPackages().subscribe(packages => {
+    this.tourPackageService.getTourPackages().subscribe((packages) => {
       this.tourPackages = packages;
     });
   }
 
-  formatter = (x: { location: string; country: string }) => `${x.location}, ${x.country}`;
+  formatter = (x: { location: string; country: string }) =>
+    this.searchMode === 'Packages' ? x.country : x.location;
 
   search: OperatorFunction<string, readonly { location: string; country: string }[]> = (text$: Observable<string>) =>
     text$.pipe(
       debounceTime(200),
       distinctUntilChanged(),
-      map(term => (term.length < 2 ? [] : this.filterUniqueLocations(term)))
+      map((term) => (term.length < 2 ? [] : this.filterUniqueItems(term)))
     );
 
-  filterUniqueLocations(term: string): { location: string; country: string }[] {
+  setSearchMode(mode: string): void {
+    this.searchMode = mode;
+    this.clearSearch(); // Clears the current search input
+  }
+
+  filterUniqueItems(term: string): { location: string; country: string }[] {
     const regex = new RegExp(`^${term}`, 'i'); // Match from the start of the string
-    const uniqueLocations = new Set<string>();
+    const uniqueItems = new Set<string>();
 
     return this.tourPackages
-      .filter(pkg => regex.test(pkg.location) || regex.test(pkg.country))
-      .filter(pkg => {
-        const key = `${pkg.location}, ${pkg.country}`;
-        if (uniqueLocations.has(key)) {
+      .filter((pkg) =>
+        this.searchMode === 'Packages' ? regex.test(pkg.country) : regex.test(pkg.location)
+      )
+      .filter((pkg) => {
+        const key = this.searchMode === 'Packages' ? pkg.country : pkg.location;
+        if (uniqueItems.has(key)) {
           return false;
         } else {
-          uniqueLocations.add(key);
+          uniqueItems.add(key);
           return true;
         }
       })
-      .map(pkg => ({ location: pkg.location, country: pkg.country }))
+      .map((pkg) => (this.searchMode === 'Packages' ? { location: '', country: pkg.country } : { location: pkg.location, country: '' }))
       .slice(0, 10); // Limit to 10 suggestions
   }
 
@@ -62,24 +70,24 @@ export class DestinationComponent {
       return this.tourPackages;
     }
 
-    return this.tourPackages.filter(
-      pkg => pkg.location === this.model!.location && pkg.country === this.model!.country
+    return this.tourPackages.filter((pkg) =>
+      this.searchMode === 'Packages' ? pkg.country === this.model!.country : pkg.location === this.model!.location
     );
   }
 
-  // Clear the search input and reset the packages
-  clearSearch() {
-    this.model = undefined;
-    this.searchTerm = '';
+  getPackageCount(): number {
+    return this.filteredPackages.length;
   }
 
-  // Handle changes to the input field
+  clearSearch() {
+    this.model = undefined;
+  }
+
   onInputChange(value: string) {
     if (value === '') {
       this.clearSearch();
     }
   }
-
   }
  
 
