@@ -4,7 +4,7 @@
     <p class="subtext sedan-regular mb-3">Every city has a story waiting to be explored. Where will your next adventure take you?</p>
   </div>
 
-  <div class="input-group mb-3">
+  <div class="input-group mb-3 position-relative">
     <!-- Search Icon -->
     <span class="input-group-text">
       <i class="bi bi-search"></i>
@@ -15,16 +15,17 @@
       id="typeahead-prevent-manual-entry"
       type="text"
       class="form-control custom-typeahead"
-      placeholder="Search the world's best photos and images"
+      placeholder="Search the location or country"
       [(ngModel)]="model"
+      (ngModelChange)="onInputChange($event)"
       [ngbTypeahead]="search"
       [inputFormatter]="formatter"
       [resultFormatter]="formatter"
       [editable]="false"
     />
     
-    <!-- Clear Button (X) -->
-    <button *ngIf="model" type="button" class="btn btn-light">
+    <!-- Clear Button (X) - Positioned inside the input -->
+    <button *ngIf="model" type="button" class="btn btn-light clear-btn" (click)="clearSearch()">
       <i class="bi bi-x"></i>
     </button>
     

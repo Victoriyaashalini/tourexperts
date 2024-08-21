@@ -35,7 +35,7 @@ export class DestinationComponent {
     text$.pipe(
       debounceTime(200),
       distinctUntilChanged(),
-      map(term => term.length < 2 ? [] : this.filterUniqueLocations(term))
+      map(term => (term.length < 2 ? [] : this.filterUniqueLocations(term)))
     );
 
   filterUniqueLocations(term: string): { location: string; country: string }[] {
@@ -62,9 +62,22 @@ export class DestinationComponent {
       return this.tourPackages;
     }
 
-    return this.tourPackages.filter(pkg =>
-      pkg.location === this.model!.location && pkg.country === this.model!.country
+    return this.tourPackages.filter(
+      pkg => pkg.location === this.model!.location && pkg.country === this.model!.country
     );
+  }
+
+  // Clear the search input and reset the packages
+  clearSearch() {
+    this.model = undefined;
+    this.searchTerm = '';
+  }
+
+  // Handle changes to the input field
+  onInputChange(value: string) {
+    if (value === '') {
+      this.clearSearch();
+    }
   }
 
   }

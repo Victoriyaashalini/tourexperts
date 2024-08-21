@@ -14,9 +14,8 @@
     font-weight: 500;
     font-style: normal;
   }
-  .spectral-regular {
+  .spectral-semibold {
     font-family: "Spectral", serif;
-    font-weight: 400;
     font-style: normal;
   }
 .navbar-nav .nav-link, 
@@ -26,9 +25,10 @@
 }
 .nav-link {
     font-size: clamp(16px, 2vw, 20px);
-    color: #0a0a0b;
+    color: #121240;
     font-family: "Spectral", serif;
-    font-weight: 600;
+    font-weight: 500;
+
 
 }
 
