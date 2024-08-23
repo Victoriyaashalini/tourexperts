@@ -456,7 +456,7 @@
     "includes": "Flight, Hotel, Meals",
     "excludes": "Visa fees",
     "Languages": "English",
-    "currency": "Euro",
+    "currency": "INR",
     "citiesCovered": "Mexico, Italy, Japan",
     "additionalImages": [
       "assets/images/additional-image-12-1.jpg",
@@ -477,7 +477,7 @@
         "description": "Leisure day or optional activities."
       }
     ],
-    "price": "Starts from 1881 Euro"
+    "price": "2,00,000"
   },
   {
     "id": 13,

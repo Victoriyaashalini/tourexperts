@@ -254,6 +254,7 @@
   display: flex;
   flex-direction: row;
   gap: 0;
+  position: relative;
 }
 
 .input-group-text {
@@ -290,9 +291,123 @@
   color: black;
 }
 
+
+
+/* Custom Dropdown Toggle */
+.custom-dropdown-toggle {
+  position: relative;
+  border-radius: 0 4px 4px 0; /* Rounded corners on the right */
+  border-left: 0; /* Remove left border to merge with input */
+  height: 50px; /* Ensure the height matches the input */
+  padding: 0 1rem; /* Adjust padding to fit the new icon */
+}
+
+/* Dropdown Menu Adjustments */
+.dropdown-menu {
+  width: calc(100% - 60px); /* Adjust based on the width of the search icon */
+  position: absolute;
+  top: 100%;
+  left: 0; /* Align with the left edge of the input box */
+  margin: 0;
+  border-radius: 0 0 4px 4px;
+  border-top: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+.dropdown-menu.show {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.dropdown-item {
+  white-space: nowrap;
+  padding: 8px 12px;
+}
+
+.dropdown-item:hover,
+.dropdown-item.active {
+  background-color: #e2e6ea;
+  color: #000;
+}
+
+/* Clear Button */
+.clear-btn {
+  position: absolute;
+  right: 60px; /* Adjust this to make space for the clear button */
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 3; /* Ensure it's above other elements */
+}
+
+/* Ensure proper alignment of the custom dropdown icon */
+.search-icon {
+  font-size: 1.2rem; /* Match the size of the new icon */
+}
+.card {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+
+
 .card-img-top {
   object-fit: fill;
   height: 200px;
   width: 100%;
 }
-/* Style for the clear button inside the input */
+
+.card-body {
+  padding: 1rem; /* Consistent padding */
+}
+
+
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600; /* Semi-bold title */
+  margin-bottom: 0.5rem;
+}
+
+.card-text {
+  margin-bottom: 0;
+}
+
+.text-muted {
+  color: #6c757d; /* Muted text color */
+}
+
+.text-primary {
+  color: #bbbbbc; /* Primary text color */
+}
+
+/* Responsive design adjustments */
+@media (max-width: 576px) {
+  .card {
+    margin-bottom: 1rem;
+  }
+
+  .card-img-top {
+    height: 150px; /* Adjust image height for smaller screens */
+  }
+}
+/* Custom styles for Material Icons */
+.icon-custom {
+  font-size: 16px; /* Adjust the size of the icon */
+  color: #0e1028; /* Change the color of the icon */
+}
+
+/* Example: Adjusting icon size and color based on state */
+.text-muted {
+  color: #6c757d; /* Example muted color */
+}
+
+.text-primary {
+  color: #007bff; /* Example primary color */
+}
+
+
+/* Add more flags as needed */

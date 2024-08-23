@@ -88,6 +88,7 @@ export class DestinationComponent {
       this.clearSearch();
     }
   }
+ 
   }
  
 

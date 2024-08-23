@@ -6,10 +6,10 @@
 
   <div class="input-group mb-3 position-relative">
     <!-- Search Icon -->
-    <span class="input-group-text">
+    <span class="input-group-text search-icon">
       <i class="bi bi-search"></i>
     </span>
-    
+
     <!-- Search Input -->
     <input
       id="typeahead-prevent-manual-entry"
@@ -24,20 +24,19 @@
       [editable]="false"
     />
     
-    <!-- Clear Button (X) - Positioned inside the input -->
+    <!-- Clear Button (X) -->
     <button *ngIf="model" type="button" class="btn btn-light clear-btn" (click)="clearSearch()">
       <i class="bi bi-x"></i>
     </button>
     
     <!-- Dropdown Button -->
-    <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown">
+    <button class="btn btn-light dropdown-toggle custom-dropdown-toggle" type="button" data-bs-toggle="dropdown">
       {{ searchMode }}
     </button>
     <ul class="dropdown-menu">
       <li><button class="dropdown-item" (click)="setSearchMode('Packages')">Packages</button></li>
       <li><button class="dropdown-item" (click)="setSearchMode('Location')">Location</button></li>
     </ul>
-    
   </div>
 </div>
 
@@ -51,28 +50,28 @@
     </div>
   </div>
 
-  <div class="row">
+  <div class="row mt-5">
     <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" *ngFor="let pkg of filteredPackages">
       <div class="card" [routerLink]="['/package', pkg.id]">
         <img src="{{ pkg.imageUrl }}" class="card-img-top" alt="{{ pkg.packagename }}">
-
+  
         <div class="card-body d-flex flex-column">
-          <div class="d-flex justify-content-between mb-2">
+          <div class="d-flex justify-content-between mb-3">
             <div class="d-flex align-items-center">
-              <p class="card-text mb-0">
-                <small class="text-muted">
-                  <span *ngIf="searchMode === 'Packages'">{{ pkg.country }}</span>
-                  <span *ngIf="searchMode === 'Location'">{{ pkg.location }}</span>
-                </small>
+              <i class="fi fi-ts-marker me-2 mt-1"></i>                          
+              <p class="card-text mb-0 text-muted">
+                <span *ngIf="searchMode === 'Packages'">{{ pkg.country }}</span>
+                <span *ngIf="searchMode === 'Location'">{{ pkg.location }}</span>
               </p>
             </div>
             <div class="d-flex align-items-center">
-              <p class="card-text mb-0"><strong>{{ pkg.tourtype }}</strong></p>
+              <p class="card-text mb-0">{{ pkg.tourtype }}</p>
             </div>
           </div>
           <h5 class="card-title">{{ pkg.packagename }}</h5>
-          <p class="card-text">
-            <small class="text-muted">{{ pkg.duration }}</small>
+          <p class="card-text text-muted">
+            <i class="fi fi-calendar-day me-2"></i>
+            <small>{{ pkg.duration }}</small>
           </p>
         </div>
       </div>

@@ -15,6 +15,7 @@ import { GrouptourComponent } from './secondorycomponent/grouptour/grouptour.com
 import { PopulartoursComponent } from './components/populartours/populartours.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { PackagedetailsComponent } from './components/packagedetails/packagedetails.component';
+import { CountryPackagesComponent } from './country-packages/country-packages.component';
 
 export const routes: Routes = [
 	{path:'',title:'home',component:HomeComponent, data: { breadcrumb: 'Home' }},
@@ -22,6 +23,8 @@ export const routes: Routes = [
 	{path:'destination',title:'destinationSearch',component:DestinationComponent,data: { breadcrumb: 'Destination' } },
 	{ path: 'package/:id', component:PackagedetailsComponent,data: { breadcrumb: 'Destination Search' } },
 	{ path: '', redirectTo: '/destination', pathMatch: 'full' },
+	{ path: 'country/:country', component: CountryPackagesComponent,data: { breadcrumb: 'Country Packages' } }, // New route for country packages
+  { path: 'package/:id', component: PackagedetailsComponent, data: { breadcrumb: 'Package Details' } }, 
 	{path:'package',title:'package',component:PackagesComponent,data: { breadcrumb: 'Packages' } },
 	
 			{path:'asia',title:'package|asia',component:AsiaComponent,data: { breadcrumb: 'Asia Packages' } },

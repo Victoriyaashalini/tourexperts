@@ -8,6 +8,7 @@ const locations = {
     'East India': ['Kolkata', 'Bhubaneswar', 'Guwahati', 'Darjeeling', 'Shillong'],
     'West India': ['Mumbai', 'Goa', 'Pune', 'Udaipur', 'Jaisalmer']
   },
+  'Africa':['Cape town','	Marrakech','	Cairo','Nairobi','Zanzibar','victoriya falls']
   'Australia': ['Sydney', 'Melbourne', 'Brisbane', 'Perth', 'Adelaide'],
   'Switzerland': ['Zurich', 'Geneva', 'Lucerne', 'Lausanne', 'Interlaken'],
   'USA': ['New York', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix'],
@@ -110,6 +111,10 @@ const descriptors = {
   'Egypt': ['Ancient', 'Mystical', 'Historic', 'Relaxing'],
   'United Arab Emirates': ['Luxurious', 'Modern', 'Vibrant', 'Unique']
 };
+const countrypackages ={
+
+}
+
 
 
 // Function to get a random location

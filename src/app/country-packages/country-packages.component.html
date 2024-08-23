@@ -1,0 +1,37 @@
+<div class="image-container">
+	<img [src]="countryPackages[0].imageUrl" class="img-overlay" alt="Tour Packages in {{ countryName }}">
+	<div class="text-container">
+	  <h1 class="sedan-regular">Tour Packages in {{ countryName }}</h1>
+	</div>
+  </div>
+  
+  
+  <!-- Breadcrumb -->
+  <div class="container mt-3">
+	<nav aria-label="breadcrumb" class="mt-3">
+	  <ol class="breadcrumb">
+		<li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+		<li class="breadcrumb-item"><a routerLink="/destination">Destination</a></li>
+		
+		<li class="breadcrumb-item active" aria-current="page">{{ countryName }}</li>
+	  </ol>
+	</nav>
+  </div>
+  
+  <!-- Tour Packages -->
+  <div class="container mt-5">
+	<h2 class="mb-4">Tour Packages in {{ countryName }}</h2>
+	<div class="row">
+	  <div *ngFor="let package of countryPackages" class="col-md-4 mb-4">
+		<div class="card">
+		  <img [src]="package.imageUrl" class="card-img-top" alt="{{ package.packagename }}">
+		  <div class="card-body">
+			<h5 class="card-title">{{ package.packagename }}</h5>
+			<p class="card-text">{{ package.description }}</p>
+			<a [routerLink]="['/package', package.id]" class="btn btn-primary">View Details</a>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  </div>
+  

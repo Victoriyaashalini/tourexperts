@@ -5,7 +5,18 @@ import { DestinationserviceService,TourPackage } from '../../services/destinatio
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
-
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { faCloudSun } from '@fortawesome/free-solid-svg-icons';
+import { faMoneyBill1Wave } from '@fortawesome/free-solid-svg-icons';
+import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
+import { faCity } from '@fortawesome/free-solid-svg-icons';
+import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
+import { faUsers } from '@fortawesome/free-solid-svg-icons';
+import { faTag } from '@fortawesome/free-solid-svg-icons';
+import { faCheck } from '@fortawesome/free-solid-svg-icons';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faDollarSign } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-packagedetails',
@@ -17,6 +28,20 @@ import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 export class PackagedetailsComponent implements OnInit {
   packageDetails!: TourPackage;
   faMapMarkerAlt = faMapMarkerAlt;
+  faArrowRight =faArrowRight ;
+  faCloudSun =faCloudSun;
+  faMoneyBillWave =faMoneyBill1Wave;
+  faTimesCircle = faTimesCircle;
+  faCheckCircle = faCheckCircle;
+  faCity =faCity;
+  faCalendarAlt = faCalendarAlt;
+  faUsers =faUsers;
+  faTag =faTag;
+  faCheck =faCheck;
+  faTimes =faTimes;
+  faDollarSign =faDollarSign;
+
+
 
   constructor(private route: ActivatedRoute, private tourPackageService: DestinationserviceService) { }
 

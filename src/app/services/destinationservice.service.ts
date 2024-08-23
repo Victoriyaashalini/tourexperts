@@ -6,17 +6,25 @@ import { map } from 'rxjs';
 export interface TourPackage {
   id: number;
   packagename: string;
+  tourtype: string;
+  keywords: string[];
   description: string;
-  tourtype:string;
+  imageUrl: string;
   location: string;
   country: string;
-  price: string; // Updated to string to include both price and currency
-  duration: string; // Updated to string to include both days and nights
+  duration: number;
+  GroupSize: number; // Add this property
+  bestTimeToVisit: string; // Add this property
+  citiesCovered: string; // Add this property
   includes: string;
   excludes: string;
-  imageUrl: string;
+  Languages: string;
+  currency: string; // Add this property
+  weatherUpdates: string; // Add this property
   additionalImages: string[];
-  itinerary: { day: string, description: string }[];
+  itinerary: { day: string; description: string }[];
+  price: string;
+  continent:string;
 }
 @Injectable({
   providedIn: 'root'
