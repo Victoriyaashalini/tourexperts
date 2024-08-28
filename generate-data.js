@@ -4,14 +4,14 @@ const fs = require('fs');
 const locations = {
   'India': {
     'North India': ['Delhi', 'Agra', 'Jaipur', 'Shimla', 'Dehradun'],
-    'South India': ['Bangalore', 'Chennai', 'Hyderabad', 'Kerala', 'Coimbatore'],
+    'South India': ['Bangalore', 'Chennai', 'Hyderabad', 'Kerala', 'Coimbatore','ooty','Kodaikanal','valparai','varkala','Kanyakumari'],
     'East India': ['Kolkata', 'Bhubaneswar', 'Guwahati', 'Darjeeling', 'Shillong'],
     'West India': ['Mumbai', 'Goa', 'Pune', 'Udaipur', 'Jaisalmer']
   },
-  'Africa':['Cape town','	Marrakech','	Cairo','Nairobi','Zanzibar','victoriya falls']
+  'Africa':['Cape town','	Marrakech','	Cairo','Nairobi','Zanzibar','victoriya falls'],
   'Australia': ['Sydney', 'Melbourne', 'Brisbane', 'Perth', 'Adelaide'],
   'Switzerland': ['Zurich', 'Geneva', 'Lucerne', 'Lausanne', 'Interlaken'],
-  'USA': ['New York', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix'],
+  'America': ['New York', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix','Miami','Rio de Janeiro','	Buenos Aires','	Machu Picchu',],
   'Kenya': ['Nairobi', 'Mombasa', 'Kisumu', 'Eldoret', 'Malindi'],
   'Morocco': ['Marrakech', 'Casablanca', 'Fes', 'Rabat', 'Chefchaouen'],
   'Seychelles': ['Victoria', 'Beau Vallon', 'Anse Royale', 'Praslin', 'La Digue'],
@@ -23,7 +23,7 @@ const locations = {
   'Canada': ['Toronto', 'Vancouver', 'Montreal', 'Ottawa', 'Calgary'],
   'Asia': ['Tokyo', 'Bangkok', 'Singapore', 'Hong Kong', 'Seoul'],
   'Bali': ['Denpasar', 'Ubud', 'Kuta', 'Seminyak', 'Nusa Dua'],
-  'China': ['Beijing', 'Shanghai', 'Guangzhou', 'Shenzhen', 'Xi\'an'],
+  'China': ['Beijing', 'Shanghai', 'Guangzhou', 'Shenzhen','Hongkong' ],
   'Dubai': ['Dubai City', 'Bur Dubai', 'Jumeirah', 'Deira', 'Dubai Marina'],
   'Hong Kong': ['Hong Kong Island', 'Kowloon', 'New Territories', 'Lantau Island', 'Mong Kok'],
   'Japan': ['Tokyo', 'Kyoto', 'Osaka', 'Hiroshima', 'Fukuoka'],
@@ -85,6 +85,8 @@ const locations = {
   'Saudi Arabia': ['Riyadh', 'Jeddah', 'Mecca', 'Medina', 'Dhahran'],
   'United Arab Emirates': ['Dubai', 'Abu Dhabi', 'Sharjah', 'Ajman', 'Ras al Khaimah'],
   'Lebanon': ['Beirut', 'Tripoli', 'Byblos', 'Sidon', 'Baalbek'],
+  'Nepal':['Kathmandu'],
+  'Austria':['Vienna']
   // Add more countries and cities here
 };
 const descriptors = {
@@ -111,9 +113,61 @@ const descriptors = {
   'Egypt': ['Ancient', 'Mystical', 'Historic', 'Relaxing'],
   'United Arab Emirates': ['Luxurious', 'Modern', 'Vibrant', 'Unique']
 };
-const countrypackages ={
-
-}
+const continentMapping = {
+  "USA": "North America",
+  "Canada": "North America",
+  "Mexico": "North America",
+  "Brazil": "South America",
+  "Argentina": "South America",
+  "Chile": "South America",
+  "Colombia": "South America",
+  "Peru": "South America",
+  "France": "Europe",
+  "Germany": "Europe",
+  "Italy": "Europe",
+  "Spain": "Europe",
+  "United Kingdom": "Europe",
+  "Netherlands": "Europe",
+  "Sweden": "Europe",
+  "Norway": "Europe",
+  "Switzerland": "Europe",
+  "Russia": "Europe",
+  "Japan": "Asia",
+  "China": "Asia",
+  "India": "Asia",
+  "South Korea": "Asia",
+  "Thailand": "Asia",
+  "Vietnam": "Asia",
+  "Indonesia": "Asia",
+  "Malaysia": "Asia",
+  "Philippines": "Asia",
+  "Singapore": "Asia",
+  "Saudi Arabia": "Middle East",
+  "United Arab Emirates": "Middle East",
+  "Israel": "Middle East",
+  "Turkey": "Middle East",
+  "Egypt": "Africa",
+  "South Africa": "Africa",
+  "Morocco": "Africa",
+  "Kenya": "Africa",
+  "Tanzania": "Africa",
+  "Nigeria": "Africa",
+  "Ghana": "Africa",
+  "Australia": "Australia",
+  "New Zealand": "Australia",
+  "Fiji": "Pacific Islands",
+  "Papua New Guinea": "Pacific Islands",
+  "Samoa": "Pacific Islands",
+  "Tonga": "Pacific Islands",
+  "Cook Islands": "Pacific Islands",
+  "India": "Asia",
+  "Sri Lanka": "Asia",
+  "Nepal": "Asia",
+  "Bhutan": "Asia",
+  "Bangladesh": "Asia",
+  "Pakistan": "Asia",
+  "Maldives": "Asia"
+};
 
 
 
@@ -154,25 +208,29 @@ const generateTourPackages = (num) => {
     const randomLanguage = languages[Math.floor(Math.random() * languages.length)];
     const randomCurrency = currencies[Math.floor(Math.random() * currencies.length)];
 
-    // Select a random descriptor for the package name
     const descriptorsList = descriptors[locationData.country] || [];
     const randomDescriptor = descriptorsList[Math.floor(Math.random() * descriptorsList.length)] || 'Amazing';
 
-    // Dynamic description generation with random descriptor
     const description = `Experience a ${randomDescriptor} adventure in the city of ${locationData.location}, ${locationData.country}. This ${randomType} package offers ${randomDays} days of unforgettable experiences, perfect for those seeking ${randomKeywords.join(' and ')}.`;
 
-    // Generate a random price between a range (e.g., 500 - 5000)
     const price = Math.floor(Math.random() * 4501) + 500; // Random price between 500 and 5000
+
+    // Determine destination type (Location or Package)
+    const destinationType = Math.random() > 0.5 ? 'Location' : 'Package';
+
+    // Get the continent based on the country
+    const continent = continentMapping[locationData.country] || 'Unknown';
 
     tours.push({
       id: i,
-      packagename: `${randomDescriptor} Tour Package ${i}`, // Updated package name with descriptor
+      packagename: `${randomDescriptor} Tour Package ${i}`,
       tourtype: randomType,
       keywords: randomKeywords,
-      description: description, // Updated description
+      description: description,
       imageUrl: `assets/images/tour-package-${i}.jpg`,
       location: locationData.location,
       country: locationData.country,
+      continent: continent,  // Add continent information here
       duration: randomDays,
       GroupSize: randomSize,
       includes: randomIncludes,
@@ -190,7 +248,8 @@ const generateTourPackages = (num) => {
         { day: "Day 2", description: "City tour and sightseeing." },
         { day: "Day 3", description: "Leisure day or optional activities." }
       ],
-      price: `Starts from ${price} ${randomCurrency}` // New field for price
+      price: `Starts from ${price} ${randomCurrency}`,
+      destinationType: destinationType // New field for destination type
     });
   }
 

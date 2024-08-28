@@ -19,7 +19,7 @@ import { RouterLink } from '@angular/router';
 export class DestinationComponent {
   model: { location: string; country: string } | undefined;
   tourPackages: TourPackage[] = [];
-  searchMode: string = 'Packages'; // Default to Packages
+  searchMode: 'Packages' | 'Location' = 'Packages'; // Default to Packages
 
   constructor(private tourPackageService: DestinationserviceService) {}
 
@@ -39,7 +39,7 @@ export class DestinationComponent {
       map((term) => (term.length < 2 ? [] : this.filterUniqueItems(term)))
     );
 
-  setSearchMode(mode: string): void {
+  setSearchMode(mode: 'Packages' | 'Location'): void {
     this.searchMode = mode;
     this.clearSearch(); // Clears the current search input
   }
@@ -49,8 +49,9 @@ export class DestinationComponent {
     const uniqueItems = new Set<string>();
 
     return this.tourPackages
-      .filter((pkg) =>
-        this.searchMode === 'Packages' ? regex.test(pkg.country) : regex.test(pkg.location)
+      .filter((pkg) => 
+        (this.searchMode === 'Packages' ? pkg.destinationType === 'Package' : pkg.destinationType === 'Location') && 
+        (this.searchMode === 'Packages' ? regex.test(pkg.country) : regex.test(pkg.location))
       )
       .filter((pkg) => {
         const key = this.searchMode === 'Packages' ? pkg.country : pkg.location;
@@ -67,11 +68,16 @@ export class DestinationComponent {
 
   get filteredPackages(): TourPackage[] {
     if (!this.model) {
-      return this.tourPackages;
+      return this.tourPackages.filter((pkg) => 
+        this.searchMode === 'Packages' ? pkg.destinationType === 'Package' : pkg.destinationType === 'Location'
+      );
     }
 
     return this.tourPackages.filter((pkg) =>
-      this.searchMode === 'Packages' ? pkg.country === this.model!.country : pkg.location === this.model!.location
+      (this.searchMode === 'Packages' ? pkg.destinationType === 'Package' : pkg.destinationType === 'Location') &&
+      (this.searchMode === 'Packages'
+        ? pkg.country === this.model?.country
+        : pkg.location === this.model?.location)
     );
   }
 
@@ -88,7 +94,4 @@ export class DestinationComponent {
       this.clearSearch();
     }
   }
- 
-  }
- 
-
+}

@@ -17,31 +17,32 @@ import { faTag } from '@fortawesome/free-solid-svg-icons';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { faDollarSign } from '@fortawesome/free-solid-svg-icons';
-
+import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-packagedetails',
   standalone: true,
-  imports: [CommonModule,RouterOutlet,RouterModule,FontAwesomeModule],
+  imports: [CommonModule,RouterOutlet,RouterModule,FontAwesomeModule,FormsModule],
   templateUrl: './packagedetails.component.html',
   styleUrl: './packagedetails.component.scss'
 })
 export class PackagedetailsComponent implements OnInit {
   packageDetails!: TourPackage;
   faMapMarkerAlt = faMapMarkerAlt;
-  faArrowRight =faArrowRight ;
-  faCloudSun =faCloudSun;
-  faMoneyBillWave =faMoneyBill1Wave;
+  faArrowRight = faArrowRight;
+  faCloudSun = faCloudSun;
+  faMoneyBillWave = faMoneyBill1Wave;
   faTimesCircle = faTimesCircle;
   faCheckCircle = faCheckCircle;
-  faCity =faCity;
+  faCity = faCity;
   faCalendarAlt = faCalendarAlt;
-  faUsers =faUsers;
-  faTag =faTag;
-  faCheck =faCheck;
-  faTimes =faTimes;
-  faDollarSign =faDollarSign;
+  faUsers = faUsers;
+  faTag = faTag;
+  faCheck = faCheck;
+  faTimes = faTimes;
+  faDollarSign = faDollarSign;
 
-
+  selectedCurrency: string = 'INR';
+  convertedPrice: number = 0;
 
   constructor(private route: ActivatedRoute, private tourPackageService: DestinationserviceService) { }
 
@@ -56,12 +57,27 @@ export class PackagedetailsComponent implements OnInit {
     this.tourPackageService.getTourPackageById(id).subscribe(pkg => {
       if (pkg) {
         this.packageDetails = pkg;
-        console.log('Package Details:', this.packageDetails); // Debugging
+        this.convertPrice(); // Convert price initially
       } else {
-        console.error('Package not found with id:', id); // Debugging
+        console.error('Package not found with id:', id);
       }
     }, error => {
-      console.error('Error fetching package details:', error); // Debugging
+      console.error('Error fetching package details:', error);
     });
+  }
+
+  // Method to convert the price based on the selected currency
+  convertPrice(): void {
+    const priceInINR = parseFloat(this.packageDetails.price.replace(/[^0-9.-]+/g, ""));
+    const conversionRate = 0.5; // Example conversion rate, replace with real value
+    if (this.selectedCurrency === 'INR') {
+      this.convertedPrice = priceInINR;
+    } else if (this.selectedCurrency === this.packageDetails.currency) {
+      this.convertedPrice = priceInINR * conversionRate;
+    }
+  }
+
+  onCurrencyChange(): void {
+    this.convertPrice();
   }
 }

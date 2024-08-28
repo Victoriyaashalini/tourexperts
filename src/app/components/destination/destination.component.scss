@@ -192,6 +192,18 @@
   font-weight: 400;
   font-style: normal;
 }
+.text-muted {
+  color: #6c757d; /* Bootstrap muted text color */
+}
+
+.muted-location {
+  color: #6c757d; /* Custom muted color for location */
+}
+
+.muted-country {
+  color: #6c757d; /* Custom muted color for country */
+}
+
 .search-container {
   position: relative;
   height: 400px;

@@ -1,347 +1,402 @@
-// .container {
-// 	margin-top: 20px;
-//   }
-  
-//   .btn-secondary {
-// 	margin-bottom: 20px;
-//   }
-  
-//   .carousel-container {
-// 	margin-bottom: 20px;
-  
-// 	h2 {
-// 	  margin-bottom: 10px;
-// 	  font-size: 24px;
-// 	  font-weight: bold;
-// 	}
-  
-// 	p {
-// 	  margin-bottom: 20px;
-// 	  font-size: 18px;
-// 	  color: #666;
-  
-// 	  fa-icon {
-// 		margin-right: 5px;
-// 		color: #007bff;
-// 	  }
-// 	}
-//   }
-  
-//   .carousel {
-// 	width: 100%;
-//   }
-  
-//   .carousel-inner {
-// 	height: 500px; /* Adjust the height as needed */
-  
-// 	.carousel-item {
-// 	  height: 100%;
-  
-// 	  img {
-// 		width: 100%;
-// 		height: 100%;
-// 		object-fit: cover;
-// 		border-radius: 10px;
-// 	  }
-  
-// 	  .carousel-caption {
-// 		position: absolute;
-// 		top: 10px;
-// 		left: 0;
-// 		width: 100%;
-// 		color: white;
-// 		text-align: center;
-// 		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add text shadow for better readability */
-// 		padding: 10px;
-// 		border-radius: 10px;
-// 		background: transparent; /* Remove background color */
-  
-// 		h3 {
-// 		  font-size: 20px;
-// 		  font-weight: bold;
-// 		  margin: 0;
-// 		  animation: fadeInOut 3s ease-in-out;
-// 		}
-  
-// 		p {
-// 		  font-size: 16px;
-// 		  margin: 0;
-// 		  animation: fadeInOut 3s ease-in-out;
-  
-// 		  fa-icon {
-// 			margin-right: 5px;
-// 			color: #007bff;
-// 		  }
-// 		}
-// 	  }
-// 	}
-//   }
-  
-//   .carousel-control-prev-icon,
-//   .carousel-control-next-icon {
-// 	filter: invert(1);
-//   }
-  
-//   .package-info {
-// 	margin-top: 40px; /* Move the package info down a bit */
-  
-// 	h2 {
-// 	  font-size: 24px;
-// 	  margin-bottom: 20px;
-// 	}
-  
-// 	.lead {
-// 	  font-size: 16px;
-// 	  margin-bottom: 20px;
-// 	  color: #666;
-// 	}
-  
-// 	strong {
-// 	  display: block;
-// 	  margin-bottom: 5px;
-// 	}
-  
-// 	.btn-primary {
-// 	  margin-top: 20px;
-// 	}
-//   }
-  
-//   .card {
-// 	margin-bottom: 20px;
-//   }
-  
-//   .card-header {
-// 	background-color: #007bff;
-// 	color: white;
-// 	font-weight: bold;
-// 	font-size: 18px;
-//   }
-  
-//   .card-body {
-// 	font-size: 14px;
-// 	color: #333;
-  
-// 	.card-text {
-// 	  margin-bottom: 10px;
-// 	}
-//   }
-  
-//   .card-title {
-// 	font-size: 20px;
-// 	margin-bottom: 10px;
-// 	font-weight: bold;
-//   }
-  
-//   .card-text {
-// 	font-size: 14px;
-// 	color: #555;
-//   }
-  
-//   .mt-3 {
-// 	margin-top: 1rem;
-//   }
-  
-//   h3 {
-// 	margin-top: 40px;
-// 	margin-bottom: 20px;
-// 	font-size: 24px;
-// 	font-weight: bold;
-//   }
-  
-//   @media (max-width: 768px) {
-// 	.carousel-container {
-// 	  h2 {
-// 		font-size: 20px;
-// 	  }
-  
-// 	  p {
-// 		font-size: 16px;
-// 	  }
-// 	}
-  
-// 	h2 {
-// 	  font-size: 24px;
-// 	}
-  
-// 	.lead {
-// 	  font-size: 14px;
-// 	}
-  
-// 	.card-header {
-// 	  font-size: 16px;
-// 	}
-//   }
-  
-//   @keyframes fadeInOut {
-// 	0% {
-// 	  opacity: 0;
-// 	}
-// 	10% {
-// 	  opacity: 1;
-// 	}
-// 	90% {
-// 	  opacity: 1;
-// 	}
-// 	100% {
-// 	  opacity: 0;
-// 	}
-//   }
+/* Base styles */
 .sedan-regular {
-	font-family: "Sedan", serif;
-	font-weight: 400;
-	font-style: normal;
-  }
+  font-family: "Sedan", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Image Container */
 .image-container {
-	position: relative;
-	height: 650px; /* Set height to 500px */
-	overflow: hidden;
-	margin: 0; /* No margin */
-	width: 100%; /* Full width */
+  position: relative;
+  width: 100%;
+  height: auto; /* Height is dynamic based on the content */
+  overflow: hidden;
+}
+
+.img-overlay {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Adjusted to cover the container */
+}
+
+/* Text Container */
+.text-container {
+  position: absolute;
+  top: 50%;
+  left: 50px; /* Default left position */
+  transform: translateY(-50%);
+  color: white;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  z-index: 1; /* Ensure text is above the image */
+}
+
+/* Responsive Adjustments */
+
+/* Extra Large Devices (XL) */
+@media (min-width: 1200px) {
+  .image-container {
+    height: 70vh; /* Adjust height to viewport height */
   }
-  
-  .img-overlay {
-	filter: brightness(60%); /* Decrease brightness */
-	width: 100%;
-	height: 100%;
-	object-fit: fill; /* Ensure the image is fully visible within the container */
-  }
-  
+
   .text-container {
-	position: absolute;
-	top: 50%; /* Center vertically */
-	left: 150px; /* Align text closer to the left edge */
-	transform: translateY(-50%); /* Adjust for exact vertical centering */
-	color: white;
-	text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Add text shadow for better readability */
+    left: 50px; /* Default alignment */
   }
-  
+}
+
+/* Large Devices (LG) */
+@media (max-width: 1199px) and (min-width: 992px) {
+  .image-container {
+    height: 50vh; /* Adjust height to viewport height */
+  }
+
+  .text-container {
+    left: 40px; /* Adjust alignment */
+  }
+}
+
+/* Medium Devices (MD) */
+@media (max-width: 991px) and (min-width: 768px) {
+  .image-container {
+    height: 40vh; /* Adjust height to viewport height */
+  }
+
+  .text-container {
+    left: 30px; /* Further adjust alignment */
+  }
+}
+
+/* Small Devices (SM) */
+@media (max-width: 767px) and (min-width: 576px) {
+  .image-container {
+    height: 35vh; /* Adjust height to viewport height */
+  }
+
+  .text-container {
+    left: 20px; /* Further adjust alignment */
+  }
+}
+
+/* Extra Small Devices (XS) */
+@media (max-width: 575px) {
+  .image-container {
+    height: 30vh; /* Adjust height to viewport height */
+  }
+
+  .text-container {
+    left: 10px; /* Further adjust alignment */
+  }
+}
+
+/* Text Container Headings */
+.text-container h1 {
+  font-size: 2.5rem; /* Adjusted for better responsiveness */
+  font-weight: bold;
+  margin: 0 0 15px 0;
+}
+
+.text-container h2 {
+  font-size: 1.75rem;
+  margin: 0 0 10px 0;
+}
+
+.text-container h3 {
+  font-size: 1.25rem;
+  margin: 0;
+  font-weight: 600;
+  opacity: 0.9;
+  color: rgb(52, 190, 228);
+}
+
+/* Arrow Mark */
+.arrow-mark {
+  margin-right: 10px;
+  color: #007bff;
+}
+
+/* Button Styles */
+.container .btn {
+  margin-right: 10px;
+}
+
+/* Breadcrumbs */
+.breadcrumb {
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.breadcrumb-item {
+  font-size: 1rem;
+}
+
+.breadcrumb-item a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.breadcrumb-item a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  content: " | ";
+  color: #6c757d;
+}
+
+.breadcrumb-item.active {
+  color: #6c757d;
+}
+
+/* Tour Details Container */
+.tour-details-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.tour-details {
+  flex: 1;
+  max-width: 50%;
+}
+
+.tour-details h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.tour-details ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tour-details li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.detail-icon {
+  margin-right: 10px;
+  color: #007bff;
+}
+
+.image-containers {
+  flex: 1;
+  max-width: 50%;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Styles */
+.card {
+  border-radius: 12px;
+  background-color: #f8f9fa;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card h5 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #495057;
+}
+
+/* Form Select */
+.form-select-lg {
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ced4da;
+}
+
+/* Price Section */
+.price {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.price h3 {
+  font-size: 1.5rem; /* Smaller font size */
+  color: #212529;
+}
+
+.text-muted {
+  font-size: 0.875rem; /* Slightly smaller font size */
+  color: #6c757d;
+}
+
+/* Button Large */
+.btn-lg {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+/* Button Colors */
+.btn-danger {
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+
+.btn-outline-primary {
+  color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-outline-primary:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .text-container {
+    left: 30px; /* Align text more centrally */
+  }
+
   .text-container h1 {
-	font-size: 3.5rem;
-	font-weight: bold;
-	margin: 0 0 20px 0; /* Add more space between h1 and h2 */
+    font-size: 2rem;
   }
-  
+
   .text-container h2 {
-	font-size: 2rem;
-	margin: 0 0 15px 0; /* Add more space between h2 and h3 */
+    font-size: 1.5rem;
   }
-  
+
   .text-container h3 {
-	font-size: 1.5rem;
-	margin: 0;
-	font-weight: 600; /* Light font weight for the days */
-	opacity: 0.9;
-	color: rgb(52, 190, 228); /* Slight opacity for a softer look */
+    font-size: 1rem;
   }
-  .arrow-mark {
-	margin-right: 10px; /* Space between arrow and buttons */
-	color: #007bff; /* Customize arrow color */
-  }
-  
-  .container .btn {
-	margin-right: 10px; /* Space between buttons */
-  }
-  
-  .breadcrumb {
-	background-color: transparent; /* Remove background color */
-	padding: 0; /* Remove default padding */
-	margin: 0; /* Remove default margin */
-	font-size: 1rem; /* Adjust font size */
-  }
-  
-  .breadcrumb-item {
-	font-size: 1rem; /* Adjust font size for breadcrumb items */
-  }
-  
-  .breadcrumb-item a {
-	color: #007bff; /* Custom link color */
-	text-decoration: none; /* Remove underline from links */
-  }
-  
-  .breadcrumb-item a:hover {
-	text-decoration: underline; /* Underline on hover */
-  }
-  
-  .breadcrumb-item + .breadcrumb-item::before {
-	content: " | "; /* Separator between breadcrumb items */
-	color: #6c757d; /* Color for separator */
-  }
-  
-  .breadcrumb-item.active {
-	color: #6c757d; /* Color for active breadcrumb item */
-  }
+
   .tour-details-container {
-	display: flex;
-	justify-content: space-between;
-	align-items: flex-start;
-	gap: 20px;
-	margin-top: 20px;
+    flex-direction: column;
   }
-  
-  .tour-details {
-	flex: 1;
-	max-width: 50%;
+
+  .tour-details, .image-containers {
+    max-width: 100%;
   }
-  
-  .tour-details h2 {
-	font-size: 1.5rem;
-	margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .text-container {
+    left: 20px;
   }
-  
-  .tour-details ul {
-	list-style-type: none;
-	padding: 0;
-	margin: 0;
+
+  .text-container h1 {
+    font-size: 1.75rem;
   }
-  
-  .tour-details li {
-	display: flex;
-	align-items: center;
-	margin-bottom: 8px;
-	font-size: 1rem;
+
+  .text-container h2 {
+    font-size: 1.25rem;
   }
-  
-  .detail-icon {
-	margin-right: 10px; /* Space between icon and text */
-	color: #007bff; /* Customize icon color */
+
+  .text-container h3 {
+    font-size: 0.875rem;
   }
-  
-  .image-containers {
-	flex: 1;
-	max-width: 50%;
+
+  .price {
+    flex-direction: column;
+    align-items: flex-start;
   }
-  
-  .image {
-	width: 100%;
-	height: auto; /* Maintain aspect ratio */
-	border-radius: 8px; /* Optional: Add rounded corners */
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow */
+
+  .form-select-lg {
+    width: 100%;
   }
-  
+
   .card {
-	border-radius: 10px;
-	background-color: #f9f9f9;
-	padding: 1rem;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0.5rem;
   }
-  
-  .btn-outline-primary {
-	color: #007bff;
-	border-color: #007bff;
+}
+
+@media (max-width: 576px) {
+  .text-container {
+    left: 10px;
   }
-  
-  .btn-outline-primary:hover {
-	background-color: #007bff;
-	color: white;
+
+  .text-container h1 {
+    font-size: 1.5rem;
   }
-  
-  .btn-outline-secondary {
-	color: #6c757d;
-	border-color: #6c757d;
+
+  .text-container h2 {
+    font-size: 1rem;
   }
-  
-  .btn-outline-secondary:hover {
-	background-color: #6c757d;
-	color: white;
+
+  .text-container h3 {
+    font-size: 0.75rem;
   }
-  
+
+  .price h3 {
+    font-size: 1.25rem; /* Further reduced font size */
+  }
+}
+
+/* Text Section Margins */
+.text-section {
+  margin-bottom: 30px;
+  margin-top: 30px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.text-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.text-section p {
+  margin-bottom: 20px;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.text-section a {
+  font-size: 1rem;
+}
+
+/* Responsive Text Section */
+@media (max-width: 768px) {
+  .text-section {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .text-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .text-section p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Price Card Button */
+.price-card .btn-lg {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+}
+
+/* Currency Dropdown */
+.currency-dropdown {
+  width: 80px;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  border: 1px solid #ced4da;
+  margin-right: 10px;
+  background-color: #fff;
+}
+
+.currency-dropdown:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25);
+}

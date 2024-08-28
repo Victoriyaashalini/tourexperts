@@ -25,6 +25,7 @@ export interface TourPackage {
   itinerary: { day: string; description: string }[];
   price: string;
   continent:string;
+  destinationType: 'Package' | 'Location';
 }
 @Injectable({
   providedIn: 'root'
